@@ -1,0 +1,61 @@
+<view class="pages">
+    <view class="titl">
+        <view class="code"></view>
+        <view class="history" bindtap="openPageRule">使用规则</view>
+        <view class="history" bindtap="openPageHistory">历史记录</view>
+    </view>
+    <view class="period">当前创建数据第<text>{{period}}</text>期</view>
+    <view class="mian">
+        <view class="hint">至少选择5个前区号码，2个后区号码</view>
+        <view class="ul">
+            <text wx:for="{{frontNumber}}" wx:key="index" class="li {{item.show?'active':''}}" bindtap="changeData" data-type="1" data-index="{{index}}" data-item="{{item}}">{{item.num}}</text>
+        </view>
+        <view class="ul">
+            <text wx:for="{{backzoneNumber}}" wx:key="index" class="li {{item.show?'active2':''}}" bindtap="changeData" data-type="2" data-index="{{index}}" data-item="{{item}}">{{item.num}}</text>
+        </view>
+    </view>
+    <view class="random-ban" bindtap="randomClickNumber">随机一组数据</view>    
+    <view class="result-num" wx:if="{{resultList.length}}">
+        <view class="item">
+            <view class="name">前区：</view>
+            <view class="ul">
+                <text wx:for="{{resultList}}" wx:key="index" class="li active" wx:if="{{item.type==1}}">{{item.num}}</text>
+            </view>
+        </view>
+        <view class="item">
+            <view class="name">后区：</view>
+            <view class="ul">
+                <text wx:for="{{resultList}}" wx:key="index" class="li active2" wx:if="{{item.type==2}}">{{item.num}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="random-ban" wx:if="{{resultList.length}}" bindtap="submitClickBtn">确认使用该组数据</view>   
+    <view class="today-view" wx:if="{{todayDayList.length}}">
+        <view class="today-view-fixed">
+            <view class="today-view-title">今日数据{{todayDay}}</view>
+            <view class="today-view-mian">
+                <view class="today-view-y">
+                    <view class="item" wx:for="{{todayDayList}}" wx:key="index">
+                        <view class="day">{{index+1}}：</view>
+                        <text wx:for="{{item.list}}" wx:key="index" wx:for-item="item02" class="{{item02.type==1?'active':'active2'}}">{{item02.num}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="pop" wx:if="{{popShow=='rule'}}">
+    <view class="pop-content" bindtap="closePopClick">
+        <view class="title">使用规则</view>
+        <view class="main">
+            <view class="item">1.每位用户每天最多生成两条数据且生成后不可删除。</view>
+            <view class="item">2.返奖比例：当期投注额的51%，其中49%用于当期奖金分配，2%用于调节基金。</view>
+            <view class="item">3.中奖号码由5个前区号码和2个后区号码组成。根据投注号码与中奖号码相符个数的多少（号码顺序不限），确定所中奖级及奖金。</view>
+            <view class="item">4.奖项设置：“超级大乐透”奖级设置分为浮动奖和固定奖。一、二、三等奖为浮动奖，四至六等奖为固定奖。浮动奖奖金＝奖金总额－固定奖奖金。</view>
+            <view class="item">5.体彩大乐透 每周一、三、六开奖。且这些时间段晚上 八点 左右将禁止记录数据！</view>
+            <view class="item">6.具体规则，费用，奖金等全部以体彩官方为准。</view>
+            <view class="item">7.结果公布并非实时，可点击首页左上方按钮更新结果。</view>
+        </view>
+    </view>
+</view>

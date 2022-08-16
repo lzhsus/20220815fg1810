@@ -1,0 +1,37 @@
+<view id="petDetail">
+    <view class="pet-content" wx:if="{{pageShow}}">
+        <view class="pet-content-main">
+            <view class="model">
+                <view class="name">{{dataDetail.name}}</view>
+                <view class="eng-name">{{dataDetail.engName}}</view>
+                <view class="nation-life">
+                    <text>{{dataDetail.nation}}</text><text>{{dataDetail.life}}</text>
+                </view>
+                <view class="price">￥{{dataDetail.price?dataDetail.price:'100元'}}</view>
+                <view class="character">{{dataDetail.character}}</view>
+                <view class="easyOfDisease">{{dataDetail.easyOfDisease}}</view>
+                <view class="petID">编号：{{dataDetail.petID}}</view>
+            </view>
+            <view class="model" wx:if="{{dataDetail.des}}">
+                <view class="m-title">简介</view>
+                <view class="dect">{{dataDetail.des}}</view>
+            </view>
+            <view class="model" wx:if="{{dataDetail.feature}}">
+                <view class="m-title">特征</view>
+                <view class="dect">{{dataDetail.feature}}</view>
+            </view>
+            <view class="model" wx:if="{{dataDetail.careKnowledge}}">
+                <view class="m-title">养护知识</view>
+                <view class="dect">{{dataDetail.careKnowledge}}</view>
+            </view>
+            <view class="model" wx:if="{{dataDetail.feedPoints}}">
+                <view class="m-title">喂养要点</view>
+                <view class="dect">{{dataDetail.feedPoints}}</view>
+            </view>
+            <view class="model" wx:if="{{dataDetail.characterFeature}}">
+                <view class="m-title">性格特征</view>
+                <view class="dect">{{dataDetail.characterFeature}}</view>
+            </view>
+        </view>
+    </view>
+</view>

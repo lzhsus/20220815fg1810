@@ -1,0 +1,34 @@
+<view class="index" id="index" wx:if="{{pageShow=='index'}}">
+    <view class="page-index">
+        <view class="header">
+            <view class="user-msg-box">                    
+                <view class="cuserAvatarUrl">
+                    <view><open-data type="userAvatarUrl"></open-data></view>
+                </view>
+                <open-data class="userNickName" type="userNickName"></open-data>
+            </view>
+            <view class="info">
+                <view>最高通关：<text>{{gameUserInfo.maxLevel}}</text></view>
+                <view>获得总分：<text>{{gameUserInfo.maxScore}}</text></view>
+            </view>
+            <view class="ranking" bindtap="openRankingPageClick">排行榜</view>
+        </view> 
+        <view class="main"> 
+            <view wx:for="{{levels}}" wx:key="index" class="item {{item.grades>=2?'unlock-success':''}}">
+                <view class="item-main" bindtap="openClickLevel" data-item="{{item}}">
+                    <!-- 是否开启 -->
+                    <view class="lock-icon" wx:if="{{!item.unlock}}"></view>
+                    <!-- 当前等级 -->
+                    <view class="grade-icon" >
+                        <span wx:for="{{item.curGrade}}" wx:key="index"><image src="{{item}}" class="img100 img000" mode="widthFix" /></span>
+                    </view> 
+                    <!-- 得分 -->
+                    <view class="grades-icon">
+                        <span wx:for="{{item.grades}}" wx:key="index"></span>
+                    </view>
+                    <view class="title-icon"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view> 

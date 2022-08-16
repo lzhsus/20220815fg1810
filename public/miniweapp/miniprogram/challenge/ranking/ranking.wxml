@@ -1,0 +1,27 @@
+<view class="ranking" id="ranking" wx:if="{{pageShow=='index'}}">
+    <view class="ranking-content">
+        <view class="head-box">
+            <view class="head-main">排行榜</view>
+        </view>
+        <view class="ranking-list">
+            <view class="item title">
+                <view class="user">
+                    <view class="head"></view>
+                    <view class="nickname"></view>
+                </view>
+                <view class="score">总分</view>
+                <view class="rank">名次</view>
+            </view>
+            <block wx:for="{{rankingList}}" wx:key="index">
+            <view class="item">
+                <view class="user">  
+                    <view class="head"><image src="{{item.userInfo.avatarUrl}}" class="img100" mode="widthFix" /></view>
+                    <view class="nickname">{{item.userInfo.nickName}}</view>
+                </view>
+                <view class="score">{{item.totalScore}}</view>
+                <view class="rank">{{index+1}}</view>
+            </view>
+            </block>
+        </view>
+    </view>
+</view>

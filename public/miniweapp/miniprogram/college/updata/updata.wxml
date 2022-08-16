@@ -1,0 +1,30 @@
+<view class="item">
+    <view class="lable">地区：</view>
+    <picker mode="region" bindchange="bindRegionChange" value="{{region}}" >
+        <view class="picker value" wx:if="{{region[0]}}">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+        <view class="picker value" wx:else>请选择地区</view>
+    </picker>
+</view>
+<view class="item">
+    <view class="lable">年份：</view>
+    <view class="value" bindtap="opendActionSheet">{{yeare?yeare:'请选选择年份'}}</view>
+</view>
+
+<view class="select-data">
+    <view class="ul">
+        <view class="li">
+            <view class="view1">批次</view>
+            <view class="view2">文科</view>
+            <view class="view3">理科</view>
+        </view>
+        <view class="li" wx:for="{{scoreList}}" wx:key="index">
+            <view class="view1" bindtap="selectChangeType" data-index="{{index}}">{{item.type?item.type:'请选择'}}</view>
+            <view class="view2"><input bindinput="inputChangeNum" data-key="num01" data-index="{{index}}" type="number" placeholder="分数" /></view>
+            <view class="view3"><input bindinput="inputChangeNum" data-key="num02" data-index="{{index}}" type="number" placeholder="分数" /></view>
+        </view>
+    </view>
+    <view class="add-icon" bindtap="addClickData">添加+</view>
+</view>
+
+
+<view class="submit" bindtap="submitClick">提交数据</view>

@@ -1,0 +1,61 @@
+<view id="detail-info">
+    <view class="item">
+        <view class="author-header">
+            <view class="user-info">
+                <view class="img">
+                    <image src="{{itemDetail.userInfo.avatarUrl}}" class="img100" mode="widthFix" />
+                </view>
+                <view class="name-wrap">
+                    <view class="name">{{itemDetail.userInfo.nickName}}</view>
+                    <view class="update-time">{{itemDetail.create_time}}</view>
+                </view>
+            </view>
+            <view class=""></view>
+        </view>
+        <view class="li" wx:for="{{itemDetail.list}}" wx:key="index">
+            <view class="cover_img">
+                <image src="{{item.img_url}}" mode="widthFix" class="img100" />
+            </view>
+            <view class="text">{{item.msg||item.desc||item.msg.value}}</view>
+        </view>
+        <view class="address" wx:if="{{itemDetail.address}}">
+            <text>{{itemDetail.address}}</text>
+        </view>
+    </view>
+    <view class="comment">
+        <view class="comment-title">评论信息</view>
+        <view class="comment-list">
+            <view class="comment-main" wx:if="{{itemDetail.comment.length}}"> 
+                <block wx:for="{{itemDetail.comment}}" wx:key="index">
+                    <view class="comment-li-item" bindtap="selClickTarget" data-item="{{item}}">
+                        <view class="avatar"><image src="{{item.userInfo.avatarUrl}}" mode="widthFix" class="img100" /></view>
+                        <view class="userinfo">
+                            <view class="nickname-box">{{item.userInfo.mobile}} <text class="time">{{item.time}}</text></view>
+                            <view class="content">{{item.msg}}</view>
+                        </view> 
+                    </view>
+                    <view class="comment-li-item comment-li-item2" wx:if="{{item.targetList&&item.targetList.length}}" wx:for="{{item.targetList}}" wx:key="index" wx:for-item="items">
+                        <view class="avatar"><image src="{{items.userInfo.avatarUrl}}" mode="widthFix" class="img100" /></view>
+                        <view class="userinfo">
+                            <view class="nickname-box">{{items.userInfo.nickName}} <text class="time">{{items.time}}</text></view>
+                            <view class="content">{{items.msg}}</view>
+                        </view> 
+                    </view>
+                </block>
+            </view>
+            <view class="no-data" wx:if="{{!itemDetail.comment.length}}">暂无数据...</view>
+        </view>
+    </view>
+	<view class="fixed-bottom-block">
+		<view class='fixed-bottom'>
+			<view class='share-btn' data-item="{{itemDetail}}">
+				<text>分享</text>
+				<button class="button-opacity" data-id="{{itemDetail._id}}" data-name="{{itemDetail.desc}}" data-imageUrl="{{itemDetail.img_url}}" open-type="share">分享</button>
+			</view>
+			<view class="text-form">
+				<textarea class="report-ipt" bindinput="bindinput" value="{{postCommentValue}}" auto-height placeholder="{{placeholder}}" bindconfirm="bindconfirm" />
+				<view class='report-submit-btn' bindtap="bindconfirm">发送</view> 
+            </view>
+        </view>
+    </view>
+</view>

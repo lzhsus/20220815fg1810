@@ -1,0 +1,34 @@
+<view id="garbage">
+    <view class="search-box">
+        <view class="search-main" bindtap="openSearchClick">
+            <input class="input" type="text" value="{{hotname}}" placeholder="请输搜索关键词..." disabled />
+        </view>
+    </view>
+    <view class="garbage-main">
+                <!-- 垃圾分类，0为可回收、1为有害、2为厨余(湿)、3为其他(干) -->
+        <view class="garbage-main-content">
+            <view class="main-left">
+                <view bindtap="changeItemClick" class="item {{type==3?'active':''}}" data-index="3">干垃圾</view>
+                <view bindtap="changeItemClick" class="item {{type==2?'active':''}}" data-index="2">湿垃圾</view>
+                <view bindtap="changeItemClick" class="item {{type==0?'active':''}}" data-index="0">可回收物</view>
+                <view bindtap="changeItemClick" class="item {{type==1?'active':''}}" data-index="1">有害垃圾</view>
+            </view>
+            <view class="main-right">
+                <view class="ul">
+                    <block wx:for="{{list}}" wx:key="index">
+                        <view class="li">
+                            <view class="type">{{item.type_txt}}</view>
+                            <view class="name">{{item.name}}</view>
+                            <view class="aipre_txt">匹配状态：{{item.aipre_txt}}</view>
+                            <view class="explain">分类解释：{{item.explain}}</view>
+                            <view class="contain">包含类型：{{item.contain}}</view>
+                            <view class="tip">投放提示：{{item.tip}}</view>
+                        </view>
+                    </block>
+                    <view class="no-data" wx:if="{{isLoadEnd&&!list.length}}">未查询到数据...</view>
+                    <view class="no-data" wx:if="{{!isLoadEnd&&!list.length}}">加载中...</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

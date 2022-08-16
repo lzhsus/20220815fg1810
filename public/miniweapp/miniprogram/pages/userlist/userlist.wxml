@@ -1,0 +1,158 @@
+<view class="userList" id="userList" wx:if="{{pageShow}}">
+    <view class="search-box">
+        <view class="search-main">
+            <van-search value="{{ searchValue }}" placeholder="请输入搜索关键词"   bind:change="onSearchChange" bind:clear="onSearchClear" />
+        </view>
+    </view>
+    <view class="main">
+        <view class="title">超级管理员</view>
+        <view class="li" wx:for="{{superList}}" wx:key="index">
+            <view class="img-cover">
+                <image src="{{item.avatarUrl}}" class="img100" mode="widthFix" />
+            </view>
+            <view class="user-info">
+                <view class="item">
+                    <view class="kye">用户昵称：</view>
+                    <view class="value">{{item.nickName}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">性别：</view>
+                    <view class="value">{{item.gender==1?'女':'男'}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">超级管理员：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isSuperAdmin">
+                        <van-switch size="14px" active-color="red" checked="{{ item.isSuperAdmin==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">是否开启彩票：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isCaipiao">
+                        <van-switch size="14px" checked="{{ item.isCaipiao==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">是否开启社区：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isCommunity">
+                        <van-switch size="14px" checked="{{ item.isCommunity==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">手机号码：</view>
+                    <view class="value" bindtap="copyClick" data-mobile="{{item.mobile}}">{{item.mobile||'-'}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">openId：</view>
+                    <view class="value" bindtap="copyClick" data-openId="{{item.openId}}">{{item.openId}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">创建时间：</view>
+                    <view class="value">{{item.create_time}}</view>
+                </view>
+                
+            </view>
+        </view>
+        <view class="nodata" wx:if="{{!superList.length}}">暂无数据...</view>
+    </view>
+    <view class="main">
+        <view class="title">普通管理员</view>
+        <view class="li" wx:for="{{generalList}}" wx:key="index">
+            <view class="img-cover">
+                <image src="{{item.avatarUrl}}" class="img100" mode="widthFix" />
+            </view>
+            <view class="user-info">
+                <view class="item">
+                    <view class="kye">用户昵称：</view>
+                    <view class="value">{{item.nickName}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">性别：</view>
+                    <view class="value">{{item.gender==1?'女':'男'}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">普通管理员：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isAdmin">
+                        <van-switch size="14px" checked="{{ item.isAdmin==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">是否开启社区：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isCommunity">
+                        <van-switch size="14px" checked="{{ item.isCommunity==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">手机号码：</view>
+                    <view class="value" bindtap="copyClick" data-mobile="{{item.mobile}}">{{item.mobile||'-'}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">openId：</view>
+                    <view class="value" bindtap="copyClick" data-openId="{{item.openId}}">{{item.openId}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">创建时间：</view>
+                    <view class="value">{{item.create_time}}</view>
+                </view>
+                
+            </view>
+        </view>
+        <view class="nodata" wx:if="{{!generalList.length}}">暂无数据...</view>
+    </view>
+    <view class="main">
+        <view class="title">全部用户</view>
+        <view class="li" wx:for="{{userlist}}" wx:key="index">
+            <view class="img-cover">
+                <image src="{{item.avatarUrl}}" class="img100" mode="widthFix" />
+            </view>
+            <view class="user-info">
+                <view class="item">
+                    <view class="kye">用户昵称：</view>
+                    <view class="value">{{item.nickName}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">性别：</view>
+                    <view class="value">{{item.gender==1?'女':'男'}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">是否超级管理员：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isSuperAdmin">
+                        <van-switch size="14px" active-color="red" checked="{{ item.isSuperAdmin==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">是否管理员：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isAdmin">
+                        <van-switch size="14px" checked="{{ item.isAdmin==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">是否开启彩票：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isCaipiao">
+                        <van-switch size="14px" checked="{{ item.isCaipiao==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">是否开启社区：</view>
+                    <view class="value" bindtap="changeAdmin" data-item="{{item}}" data-name="isCommunity">
+                        <van-switch size="14px" checked="{{ item.isCommunity==1 }}"></van-switch>
+                    </view>
+                </view>
+                <view class="item">
+                    <view class="kye">手机号码：</view>
+                    <view class="value" bindtap="copyClick" data-mobile="{{item.mobile}}">{{item.mobile||'-'}}</view>
+                </view>
+                
+                <view class="item">
+                    <view class="kye">openId：</view>
+                    <view class="value" bindtap="copyClick" data-openId="{{item.openId}}">{{item.openId}}</view>
+                </view>
+                <view class="item">
+                    <view class="kye">创建时间：</view>
+                    <view class="value">{{item.create_time}}</view>
+                </view>
+                
+            </view>
+        </view>
+        <view class="nodata" wx:if="{{!userlist.length}}">暂无数据...</view>
+    </view>
+</view>

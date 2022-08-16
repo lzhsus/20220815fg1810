@@ -1,0 +1,44 @@
+<view class="weapp">
+    <view class="module">
+        <view class="title" bindtap="openProvinceChange">
+            <text>{{provinceList[provinceIndex]}}</text>
+            <text class="more">更多</text>
+            <text class="e-tu" catchtap="openEchartClick">图表</text>
+        </view>
+        <!-- 时间选择 -->
+        <view class="time">
+            <block wx:for="{{yearList}}" wx:key="index">
+                <text class="txt {{yearIndex==index?'active':''}}" data-index="{{index}}" bindtap="changeYearClick">{{item}}</text>
+            </block>
+        </view>
+        <view class="score-box">
+            <view class="thead">
+                <view class="view1">批次</view>
+                <view class="view2" wx:if="{{isTow}}">文科</view>
+                <view class="view3" wx:if="{{isTow}}">理科</view>
+                <view class="view3" wx:if="{{!isTow}}">分数线</view>
+            </view>
+            <view class="tbady">
+                <view class="tr" wx:for="{{list}}" wx:key="index">
+                    <view class="view1">{{item.type}}</view>
+                    <view class="view2" wx:if="{{isTow}}">{{item.num01}}</view>
+                    <view class="view3" wx:if="{{isTow}}">{{item.num02}}</view>
+                    <view class="view3" wx:if="{{!isTow}}">{{item.num01}}</view>
+                </view>
+                <view class="no-data" wx:if="{{!list.length}}">当前暂数据，请联系管理员更新</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="pop" wx:if="{{provinceShow}}">
+    <view class="pop-content">
+        <view class="main">
+            <text wx:for="{{provinceList}}" wx:key="index" class="value {{provinceIndex == index?'active':''}}" bindtap="provinceChangeClick" data-index="{{index}}">{{item}}</text>
+        </view>
+        <view class="btn-box">
+            <view class="btn2" bindtap="provinceCancel">取消</view>
+            <view class="btn3" bindtap="provinceConfirm">确定</view>
+        </view>
+    </view>
+</view>

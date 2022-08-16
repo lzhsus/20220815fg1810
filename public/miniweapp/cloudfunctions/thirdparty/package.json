@@ -1,0 +1,20 @@
+{
+  "name": "homeAdmin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.27.0",
+    "node-xlsx": "^0.15.0",
+    "request": "^2.88.2",
+    "showapi-sdk": "^1.0.4",
+    "tcb-router": "^1.1.2",
+    "tenpay": "^2.1.18",
+    "wx-server-sdk": "^2.0.3"
+  }
+}

@@ -1,0 +1,13 @@
+<!-- <view class="run-main">
+    <view class="title">
+        <text>步数</text><text>1120</text>
+    </view>
+
+    <ec-canvas id="month-trend-bar-dom" class="month-trend" canvas-id="month-trend-bar" bind:init="echartBarInit"
+        ec="{{ec}}">
+    </ec-canvas>
+</view> -->
+<image src="{{url}}" mode="widthFix" />
+<view bindtap="openClick"> 选择图片</view>
+<image class="img100" src="http://tmp/zFdzcfdUSc6Q194955968a1e210dce5d122e6b236135.png" mode="wiethFix"></image>
+<canvas type="2d" id="haibaoCanvas" canvas-id="haibaoCanvas" style="width:1000px; height:500px;"></canvas>

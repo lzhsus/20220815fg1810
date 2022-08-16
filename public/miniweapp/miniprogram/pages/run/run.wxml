@@ -1,0 +1,140 @@
+<view id="sports-index" class="font-Rastella-3" wx:if="{{pageShow}}">
+    <view class="sport-header">
+        <view class="head-back">
+            <view class="back-icon"></view><view class="logo-iocn">H羞羞的语言</view>
+        </view>
+        <!-- 进入进度 今日步数 -->
+        <view class="head-main">
+            <view class="day-step">
+                <text class="step">{{runInfo.today.step_t}}</text><text>今日步数</text>
+            </view>
+            <view class="run-info">
+                <view class="run-tiem">
+                    <text>{{runInfo.today.calorie_t}} 卡路里</text><text>{{runInfo.today.distance_t}} 公里</text>
+                </view>
+                <view class="run-hint">您今日一走{{runInfo.today.distance_t}}公里</view>
+            </view>
+            <view id="schedule" bindtap="openTargetStep">
+                <view class="schedule-item">
+                    <text class="schedule-txt">{{runInfo.scheduleSH}}%</text>
+                    <view class="schedule-rotate" style="transform: rotate({{-runInfo.schedule}}deg)"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!--  -->
+    <view class="sport-module">
+        <view class="sport-module-title">
+            <text>本月概要</text>
+            <text class="more" bindtap="openMoreLog">更多记录</text>
+        </view>
+        <view class="sport-list">
+            <scroll-view scroll-x="{{true}}" style="white-space: nowrap;height: 130px;">
+                <view class="sport-item">
+                    <view class="sport-info">
+                        <view class="step">{{runInfo.total.step_t}}</view>
+                        <view class="title">脚步</view>
+                        <view class="desc">七月走了</view>
+                    </view>
+                </view>
+                <view class="sport-item">
+                    <view class="sport-info">
+                        <view class="step">{{runInfo.total.calorie_t}}</view>
+                        <view class="title">卡路里</view>
+                        <view class="desc">七月燃脂</view>
+                    </view>
+                </view>
+                <view class="sport-item">
+                    <view class="sport-info">
+                        <view class="step">{{runInfo.total.distance_t}}</view>
+                        <view class="title">公里</view>
+                        <view class="desc">七月里程数</view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="sport-module" wx:if="{{runInfo.shequShow}}">
+        <view class="sport-module-title">
+            <text>讨论专区</text>
+            <text ></text>
+        </view>
+        <view class="sport-list border" bindtap="openForumPages">
+            <image src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/sq-img.jpg?sign=8beb9c8974145523f9a4cbc870a6a883&t=1621395859" mode="widthFix" class="img100" />
+        </view>
+    </view>
+    <view class="sport-module">
+        <view class="sport-module-title">
+            <text>趣味答题专区 </text>
+            <text ></text> 
+        </view>
+        <view class="sport-list border" bindtap="openAnswerPages">
+            <image src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/ranking-cover.jpg?sign=ce845d29410b6f3e19479416912ec817&t=1629345072" mode="widthFix" class="img100" />
+        </view>
+    </view>
+    <view class="sport-module">
+        <view class="sport-module-title">
+            <text>商场专区</text>
+            <text ></text>
+        </view>
+        <view class="sport-list border" bindtap="oenGoodsPage">
+            <image src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/2017093018213020811.png" mode="widthFix" class="img100" />
+        </view>
+    </view>
+    <!--  -->
+    <view class="sport-module">
+        <view class="sport-module-title">
+            <text>运动追踪</text>
+            <!-- <text class="more"></text> -->
+        </view>
+        <view class="sport-list">
+            <scroll-view scroll-x="{{true}}" style="white-space: nowrap;height: 130px;">
+                <view class="sport-item2" bindtap="openRuningClick">
+                    <view class="sport-info">
+                        <view class="name">步行</view>
+                    </view>
+                </view>
+                <view class="sport-item2" bindtap="openRuningClick">
+                    <view class="sport-info">
+                        <view class="name">跑步</view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<!-- 为获取当天数据 -->
+<view class="pop" wx:if="{{runInfo.isToday==0}}">
+    <view class="pop-contnet">
+        <!-- <view class="close"></view> -->
+        <view class="title">提 示</view>
+        <view class="message">
+            <text>您当前暂无获取数据记录\n请先获取当前数据！</text>
+        </view>
+        <view class="submit" bindtap="getTodayDate">立即获取</view>
+    </view>
+</view>
+<!--  -->
+<view class="pop" wx:if="{{openSttingShow}}">
+    <view class="pop-contnet">
+        <!-- <view class="close"></view> -->
+        <view class="title">提 示</view>
+        <view class="message">
+            <text>你暂未获取微信步数权利！</text>
+        </view>
+        <view class="submit" bindtap="openSetting">打开设置</view>
+    </view>
+</view>
+<view class="pop" wx:if="{{targetStep}}">
+    <view class="pop-contnet">
+        <view class="close" bindtap="closePop"></view>
+        <view class="title">提 示</view>
+        <view class="message">
+            <view class="input">
+                <input type="number" bindinput="bindinput" placeholder="请输入目标步数(1000的倍数)" />
+            </view>
+            <text class="hint">系统默认6000步,当前设置{{runInfo.target_step}}!</text>
+        </view>
+        <view class="submit" bindtap="submitTagetStep">确认提交</view>
+    </view>
+</view>

@@ -1,0 +1,3 @@
+<div class="container">
+    <web-view bindmessage="bindmessage" src="{{webviewUrl}}" binderror="binderror"></web-view>
+</div>

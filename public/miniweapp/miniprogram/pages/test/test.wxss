@@ -1,0 +1,26 @@
+.run-main {
+  width: 700rpx;
+  height: 400rpx;
+  margin: 25rpx auto;
+  border-radius: 12rpx;
+  overflow: hidden;
+  background: linear-gradient(to top right, #17ba83, #169e9e);
+}
+.run-main .title {
+  width: 650rpx;
+  height: 80rpx;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.run-main .month-trend {
+  display: block;
+  width: 100%;
+  height: 320rpx;
+  color: #fff;
+}

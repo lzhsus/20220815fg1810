@@ -1,0 +1,48 @@
+<view class="tab-nav">
+    <view bindtap="changeTabNavClick" data-pageShow="manager" class="item {{pageShow=='manager'?'active':''}}">语言识别</view>
+    <view bindtap="changeTabNavClick" data-pageShow="translate" class="item {{pageShow=='translate'?'active':''}}">语言翻译</view>
+</view>
+<!-- 语言识别 -->
+<view class="manager-content" wx:if="{{pageShow=='manager'}}">
+    <view class="recognize">
+        <block wx:for="{{recognizes}}" wx:key="index">
+            <text>{{item.result}} </text>
+        </block>
+    </view>
+    <view class="result">
+        <text>{{managerItem.result}}</text>
+        <text wx:if="{{managerItem.result}}" class="copy">复制</text>
+    </view>
+    <view class="play-icon {{playStatus?'active':''}} {{!managerItem.tempFilePath?'no-active':''}}" bindtap="playIconClick">
+        <image class="img100" src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/play-icon.png?sign=3177db3d5d5dee92d3bb423fc1e65c3e&t=1612233024" mode="widthFix" />
+    </view>
+    <!-- 录音 -->
+    <view class="luyin-icon {{isTouch?'active':''}}" bindtouchstart='bindtouchstart' bindtouchend='bindtouchend' bindtouchmove='bindtouchmove'>
+        <image src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/luyin-icon.png?sign=094e95dbdb10707865db12da55740e68&t=1612177205" class="img100" mode="widthFix" />
+    </view>
+</view>
+<!-- 翻译 -->
+<view class="translate-content"  wx:if="{{pageShow=='translate'}}">
+    <view class="translate-type" bindtap="changeTranslateClick">
+        <text>{{translate.type==1?translate.ltoText:translate.lfromText}}</text>
+        <text class="type"></text>
+        <text>{{translate.type==1?translate.lfromText:translate.ltoText}}</text>
+    </view>
+    <!-- 当前语言 -->
+    <view class="l-from">
+        <textarea bindinput="bindInputTranslate" value="{{lfromText}}" placeholder="请输入需要翻译的语句" auto-height maxlength="1000" auto-height></textarea>
+    </view>
+    <view class="l-to">{{ltoText}}
+        <view class="play-icon {{playStatus2?'active':''}} {{!filename?'no-active':''}}" bindtap="playIconClick2">
+            <image class="img100" src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/play-icon.png?sign=3177db3d5d5dee92d3bb423fc1e65c3e&t=1612233024" mode="widthFix" />
+        </view>
+    </view>
+    <view class="l-btn" bindtap="startTranslate">开始翻译</view>
+</view>
+<view class="pop" wx:if="{{settingShow}}">
+    <view class="pop-content">
+        <view class="close" bindtap="closeCLick">X</view>
+        <view class="massage">请允许使用您的录音权限！</view>
+        <view class="btn" bindtap="openSetting">打开设置</view>
+    </view>
+</view>

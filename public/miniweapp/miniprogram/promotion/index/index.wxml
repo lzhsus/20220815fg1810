@@ -1,0 +1,37 @@
+<view id="promotionIndex">
+    <view class="prootionindex-content">
+        <view class="ul">
+            <view class="li" wx:for="{{promotionList}}" wx:key="index">
+                <view bindtap="openQRCode" data-item="{{item}}" class="img-cover" style="background-image:url({{item.img_url}})"></view>
+                <view class="info-box">
+                    <view class="item">
+                        <view class="key">商品名称</view>
+                        <view class="value">{{item.name}}</view>
+                    </view>
+                    <view class="item">
+                        <view class="key">店铺名称</view>
+                        <view class="value">{{item.shop_name}}</view>
+                    </view>
+                    <view class="item">
+                        <view class="key">价格</view>
+                        <view class="value">¥{{item.price}}</view>
+                    </view>
+                </view>
+                <view class="footer-box">
+                    <view class="share-btn" bindtap="openQRCode" data-item="{{item}}">购买</view>
+                    <view class="share-btn" bindtap="openShare" data-item="{{item}}">分享</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="pop" wx:if="{{qrImg}}">
+    <view class="pop-contnet promotion-qrcode">
+        <view class="close">X</view>
+        <view class="img-cover">
+            <image src="{{qrImg}}" class="img100" mode="widthFix" />
+        </view>
+        <view class="hint">长按二维码进入</view>
+    </view>
+</view>

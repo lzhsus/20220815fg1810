@@ -1,0 +1,87 @@
+page{background:#f4f4f4}
+#dog{
+    .tab{
+        width: 100%;height: 50px;
+        .tab-fixed{
+            position: fixed;top: 0;left: 0;width: 100%;height: 40px;z-index: 999;
+            box-shadow: 0 0 20rpx rgba(200, 200, 200, 0.2);
+            padding: 4px;background: #fff;
+            display: flex;justify-content: center;align-items: center;
+            .tab-item{
+                min-width: 180rpx;height: 36px;border-radius: 12rpx;margin: 0 12rpx;
+                padding: 0 20rpx;box-sizing: border-box;display: inline-block;
+                background: #fff;text-align: center;line-height: 36px;
+                box-shadow: 0 0 20rpx rgba(200, 200, 200, 0.2);
+                font-size: 14px;color: #000;font-weight: bold;
+                &.active{
+                    background: #409eff;color: #fff;font-size: 18px;
+                }
+            }
+            .scroll-view{
+                white-space: nowrap;            
+            }  
+        }  
+    }
+    .main{
+        padding: 20rpx;box-sizing: border-box;
+        .item{
+            position: relative;
+            width: 100%;height: 250rpx;margin-bottom: 30rpx;
+            .img{
+                position: absolute;top: 0;left: 0;z-index: 10;
+                width: 330rpx;height: 250rpx;border-radius: 20rpx;overflow: hidden;
+                box-shadow: 0 0 20rpx rgba(200, 200, 200, 0.2);
+                background: #fff;
+                background-position:center center;
+                background-repeat: no-repeat;
+                background-size: cover;padding: 1px;
+                background-clip: content-box;
+            }
+            .info{
+                position: absolute;top: 50%;left: 0;transform: translateY(-50%);z-index: 1;
+                width: 100%;height: 200rpx;padding:12rpx 12rpx 12rpx 350rpx;box-sizing: border-box;
+                box-shadow: 0 0 20rpx rgba(200, 200, 200, 0.2);background: #fff;
+                border-radius: 20rpx;overflow: hidden;position: relative;
+                .name{
+                    font-size: 16px;color: #000;font-weight: bold;
+                }
+                .env-name{
+                    font-size: 12px;color: #a9a9a9;height: 40rpx;line-height: 40rpx;
+                }
+                .price{
+                    font-size: 10px;color: #d3d3d3;margin-top: 12rpx;
+                }
+                .more-info{
+                    margin-top: 12rpx;
+                    display: flex;justify-content: flex-start;align-items: center;
+                    .age{
+                        position: absolute;bottom: 20rpx;right: 20rpx;
+                        font-size: 10px;color: #ccc;
+                        display: flex;justify-content: flex-start;align-items: center;
+                        .age-icon{
+                            width: 24rpx;height: 24rpx;display: block;
+                            background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/my_icon/age.png) center center no-repeat;
+                            background-size: 100% auto;margin-right: 2px;
+                        }
+                    }
+                }
+                .gender{
+                    position: absolute;top: 12rpx;right: 12rpx;
+                    width: 30rpx;height: 30rpx;
+                    &.boy{
+                        background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/my_icon/nan-icon.png?sign=331fa370f2351ee00868a4f37388d9e4&t=1614152872) center center no-repeat;
+                        background-size: 100% auto;
+                    }
+                    &.girl{
+                        background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/my_icon/nv-icon.png?sign=331fa370f2351ee00868a4f37388d9e4&t=1614152872) center center no-repeat;
+                        background-size: 100% auto;
+                    }
+                }
+            }
+        }
+    }
+    .no-data{
+        padding: 20px;width: 100%;text-align: center;box-sizing: border-box;
+        font-size: 10px;color: #999;
+    }
+}

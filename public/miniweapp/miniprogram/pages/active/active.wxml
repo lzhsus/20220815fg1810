@@ -1,0 +1,7 @@
+<view class="content" id="active">
+    <block wx:for="{{activeList}}" wx:key="index">
+        <view class="item" bindtap="openWebView" data-page="{{item.active_link}}" data-appid="{{item.we_app_info.app_id}}" data-pagepath="{{item.we_app_info.page_path}}">
+            <image class="img100" src="{{item.qrcode}}" mode="widthFix" />
+        </view>
+    </block>
+</view>

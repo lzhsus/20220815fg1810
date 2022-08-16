@@ -1,0 +1,18 @@
+<view wx:if="{{pageShow=='index'}}">
+    <view class="tag-box">
+        <block wx:for="{{levels}}" wx:key="index"><van-tag type="{{!item.show?'primary':'danger'}}" bindtap="changeTagClick" data-index="{{index}}">{{item.level_txt}}_{{item.code}}</van-tag></block>
+    </view>
+    <view class="hint" wx:if="{{qa_id!=-1}}">当前关卡已录入第 <span>{{qa_id}}</span> 题，下一题为第 <span class="g">{{qa_id+1}}</span> 题</view>
+    <van-cell-group>
+        <van-field bind:input="inputTap" data-name="issue" value="{{ qa.issue }}" label="问题？" placeholder="请输入" input-align="right" />
+        <van-field bind:input="inputTap" data-name="A" value="{{ qa.A }}" label="A" placeholder="请输入" input-align="right" />
+        <van-field bind:input="inputTap" data-name="B" value="{{ qa.B }}" label="B" placeholder="请输入" input-align="right" />
+        <van-field bind:input="inputTap" data-name="C" value="{{ qa.C }}" label="C" placeholder="请输入" input-align="right" />
+        <van-field bind:input="inputTap" data-name="D" value="{{ qa.D }}" label="D" placeholder="请输入" input-align="right" />
+
+        <van-field bind:input="inputTap" data-name="result"  value="{{ qa.result }}" label="正确答案" placeholder="请输入A B C D" input-align="right" />
+    </van-cell-group>
+
+    <van-button type="primary" size="large" bindtap="submitClick">提交数据</van-button>
+</view>
+  

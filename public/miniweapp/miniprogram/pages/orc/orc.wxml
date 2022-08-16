@@ -1,0 +1,18 @@
+<ocr-navigator bind:onSuccess="success" certificateType="idCard" opposite="{{false}}">
+    <button type="primary">身份证正面识别</button>
+</ocr-navigator>
+<ocr-navigator bind:onSuccess="success" certificateType="idCard" opposite="{{true}}">
+    <button type="primary">身份证反面识别</button>
+</ocr-navigator>
+<ocr-navigator bind:onSuccess="blankSuccess"  certificateType="bankCard">
+  <button type="primary">银行卡识别</button>
+</ocr-navigator>
+<ocr-navigator bind:onSuccess="driverSuccess" certificateType="drivingLicense" selectedOptions="{{['plateNum','vehicleType','owner']}}">
+  <button type="primary">行驶证识别</button>
+</ocr-navigator>
+<ocr-navigator bind:onSuccess="businessSuccess"   certificateType="businessLicense">
+  <button type="primary">营业执照识别</button>
+</ocr-navigator>
+<ocr-navigator bind:onSuccess="driverLicenseSuccess"   certificateType="driverslicense">
+  <button type="primary">驾驶证识别</button>
+</ocr-navigator>

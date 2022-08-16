@@ -1,0 +1,5 @@
+<view class="search-box">
+    <view class="search-main" bindtap="openSearchClick">
+        <input class="input" type="text" placeholder="请输搜索关键词..." disabled />
+    </view>
+</view>

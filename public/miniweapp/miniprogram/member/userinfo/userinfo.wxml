@@ -1,0 +1,46 @@
+<view class="member-userinfo" id="memberUserInfo" wx:if="{{pageShow}}">
+    <view class="input-box">
+        <view class="item">
+            <view class="key"></view>
+            <view class="value img">
+                <image src="{{userInfo.avatarUrl}}" class="img100" mode="widthFix" />
+            </view>
+        </view>
+        <view class="item">
+            <view class="key">身份</view>
+            <view class="value">
+                <text wx:if="{{userInfo.isSuperAdmin==1}}">超级管理员</text>
+                <text wx:elif="{{userInfo.isAdmin==1}}">管理员</text>
+                <text wx:else>普通用户</text>
+            </view>
+        </view>
+        <view class="item">
+            <view class="key">用户名</view>
+            <view class="value">{{userInfo.nickName}}</view>
+        </view>
+        <view class="item">
+            <view class="key">手机号</view>
+            <view class="value">
+                <input wx:if="{{!userInfo.mobile}}" class="ipt" type="text" bindinput="inputUserInfoChange" data-name="mobile" placeholder="请输入手机号码" />
+                <view class="ipt" wx:else>{{userInfo.mobile}}</view>
+            </view>
+        </view>
+        <view class="item">
+            <view class="key">性别</view>
+            <view class="value">{{userInfo.gender==0?'男':(userInfo.gender==1?'女':'未知')}}</view>
+        </view>
+        <view class="item">
+            <view class="key">常住城市</view>
+            <view class="value" wx:if="{{!userInfo.live_province}}">
+                <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+                    <view class="picker" wx:if="{{region[0]}}">{{region[0]}}，{{region[1]}}，{{region[2]}}</view>
+                    <view class="picker p" wx:else>选择常住城区，确认后将不可修改</view>
+                </picker>
+            </view>
+            <view class="value" wx:else>{{userInfo.live_province}}</view>
+        </view>
+        <view class="hint">（常住城市选择就不可更改）</view>
+    </view>
+    <view wx:if="{{true||!userInfo.mobile}}" class="submit" bindtap="submitClick">确认提交</view>
+    <view wx:if="{{!userInfo.mobile}}" class="hint">用户信息一旦提交，后续将不可修改！</view>
+</view>

@@ -1,0 +1,3 @@
+<view wx:if="{{imgData}}">
+    <image src="{{imgData}}" class="img100" mode="widthFix" />
+</view>

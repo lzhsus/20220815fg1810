@@ -1,0 +1,108 @@
+<view class="weapper">
+    <block wx:for="{{forumList}}" wx:key="index" wx:if="{{forumList.length}}">
+    <view class="item">
+        <view class="author-header">
+            <view class="user-info">
+                <view class="img"><image src="{{item.userInfo.avatarUrl}}" class="img100" mode="widthFix" /></view>
+                <view class="name-wrap">
+                    <view class="name">{{item.userInfo.nickName}}</view>
+                    <view class="update-time">{{item.create_time}}</view>
+                </view>
+            </view>
+            <view class="follow {{item.format_num?'active':''}}" bindtap="followUserInfo" data-item="{{item}}">{{!item.format_num?'关注':'已关注'}}</view>
+        </view>
+        <view class="image-cover-box">
+            <text class="image-hint">{{item.list.length||0}}</text>
+            <!-- 一张图片 -->
+            <view class="cover_img" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==1||item.img_url}}">
+                <image src="{{item.img_url||item.list[0].img_url}}" mode="widthFix" class="img100" />
+            </view>
+            <!-- 两张图片 -->
+            <view class="cover_img2" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==2}}">
+                <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"></view>
+            </view>
+            <!-- 三正图片 -->
+            <view class="cover_img3" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==3}}">
+                <view class="cover_img2">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})" wx:if="{{index<=1}}"></view>
+                </view>
+                <view class="three-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})" wx:if="{{index==2}}"></view>
+            </view>
+            <!-- 四张图片 -->
+            <view class="cover_img4" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==4}}">
+                <view class="cover_img2">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index<=1}}"></view>
+                </view>
+                <view class="cover_img2">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})" wx:if="{{index>1}}"></view>
+                </view>
+            </view>
+            <!-- 5张图片 -->
+            <view class="cover_img5" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==5}}">
+                <view class="cover_img2">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index<=1}}"></view>
+                </view>
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})" wx:if="{{index>1}}"></view>
+                </view>
+            </view>
+            <!-- 6张图片 -->
+            <view class="cover_img6" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==6}}">
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index<=2}}"></view>
+                </view>
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})" wx:if="{{index>2}}"></view>
+                </view>
+            </view>
+            <!-- 7张图片 -->
+            <view class="cover_img7" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==7}}">
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index<=2}}"></view>
+                </view>
+                <view class="cover_img2">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index>2&&index<=4}}"></view>
+                </view>
+                <view class="cover_img2">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index>4}}"></view>
+                </view>
+            </view>
+            <!-- 8张图片 -->
+            <view class="cover_img8" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length==8}}">
+                <view class="cover_img2">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index<=1}}"></view>
+                </view>
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index>1&&index<=4}}"></view>
+                </view>
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index>4}}"></view>
+                </view>
+            </view>
+            <!-- 9张图片 -->
+            <view class="cover_img9" bindtap="openDetail" data-id="{{item._id}}" wx:if="{{item.list&&item.list.length>=9}}">
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index<=2}}"></view>
+                </view>
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index>2&&index<=5}}"></view>
+                </view>
+                <view class="cover_img3">
+                    <view class="tow-img image-cover" wx:for="{{item.list}}" wx:for-item="item2" wx:key="index2" style="background-image:url({{item2.img_url}})"  wx:if="{{index>5&&index<=8}}"></view>
+                </view>
+            </view>
+        </view>
+
+        <view wx:if="{{item.desc||item.list[0].msg}}" class="text" bindtap="openDetail" data-id="{{item._id}}">{{item.desc||item.list[0].msg}}</view>
+        <view class="opt" bindtap="openDetail" data-id="{{item._id}}">
+            <text class="likes-num">{{item.browse_num}}</text>
+            <text class="num">{{item.comment_num||0}}</text>
+        </view>
+        <view class="address" wx:if="{{item.address}}">
+            <text>{{item.address}}</text>
+        </view>
+    </view>
+    </block>
+    <view wx:if="{{!forumList.length}}" class="no-data">暂无数据...</view>
+    <view class="create-up" bindtap="openPageUp" wx:if="{{forumList.length}}"></view>
+</view>

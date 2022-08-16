@@ -1,0 +1,30 @@
+<view id="setting">
+
+    <view class="van-cell">
+        <view class="title">订阅消息说明</view>
+        <view class="desc">
+            <text>当订阅数量为0时，无法接收到以下该类消息提醒</text>
+            <text style="color:rgb(191,42,42)">当订阅数量小于5时，将以红色提醒</text>
+        </view>
+    </view>
+    <view class="van-main">
+        <block wx:for="{{subscribeList}}" wx:key="index">
+            <view class="van-cell2">
+                <view class="left">
+                    <view class="title">{{item.name}}</view>
+                    <view class="desc">
+                        <text wx:if="{{item.count>=5}}">共订阅{{item.count}}次</text>
+                        <text style="color:rgb(191,42,42)" wx:else>共订阅{{item.count}}次</text>
+                    </view>
+                </view>
+                <view style="width:160rpx;height:60rpx;color:#fff;background-color: #06ad56;font-size:12px;text-align: center;line-height: 60rpx;float: right;border-radius: 4px;" bindtap="subscribeSubmit" data-index="{{index}}" data-item="{{item}}">订阅 +1</view>
+            </view>
+        </block>
+    </view>
+    <view class="van-cell" bindtap="openSetting">
+        <view class="title">微信授权设置</view>
+        <view class="desc">
+            <text>拒绝订阅消息后重新授权</text>
+        </view>
+    </view>
+</view>

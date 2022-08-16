@@ -1,0 +1,75 @@
+page{
+    background: rgb(241, 237, 237);
+}
+#qaId{
+    overflow: hidden;
+    .main-box{
+        width: 650rpx;margin:20rpx auto;padding: 30rpx;box-sizing: border-box;
+        border-radius: 30rpx;overflow: hidden;position: relative;
+        background: #fff;box-shadow:  0 0 20rpx rgba(241, 237, 237,0.5);
+        .h1{
+            width: 100%;height: 70px;
+            font-size: 20px;color: rgb(13, 134, 214);font-weight: bold;text-align: left;
+        }
+        .sel-item{ 
+            width: 100%;text-align: left;padding: 26rpx;background: rgb(245, 245, 245);box-sizing: border-box;
+            font-size: 12px;color: #000;font-weight: bold;margin-bottom: 20rpx;
+            border-radius: 4px;overflow: hidden;
+            display: flex;justify-content:stretch;
+            .key{
+                display: block;width: 20px;min-width: 20px;
+            }
+            &.choice{
+                color: red; 
+                .key{
+                    color: #000;
+                }
+            }
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .isQaResult{
+            position: absolute;bottom: 50rpx;right: 20rpx;
+            font-size: 20px;color: #409eff;font-weight: bold;
+            transform: rotate(-45deg);
+            &.red{
+                color: red;
+            }
+        }
+        .hint{
+            padding: 40rpx 0 0;font-size: 10px;text-align: center;color: #999;
+        }
+    }
+}
+.pop{
+    position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0,0.8);
+    .pop-contnet{
+        position: relative;top: 50%;left: 50%;transform: translate(-50%,-50%);
+        width: 650rpx;padding: 30rpx;box-sizing: border-box;border-radius: 30rpx;
+        background: #fff;
+        .title{
+            font-size: 30px;font-weight: bold;color: #000;text-align: center;width: 100%;
+        }
+        .main{
+            width: 500rpx;margin:50rpx auto 0;
+            .item{
+                display: flex;
+                font-size: 12px;color: rgb(48, 48, 48);font-weight: bold;
+                margin-bottom: 20rpx;
+                .key{
+                    flex-shrink: 0;
+                }
+                .value{
+
+                }
+            }
+        }
+        .btn-box{
+            display: flex;justify-content: center;align-items: center;margin-top: 50rpx;
+            van-button,button{
+               width: 200rpx; display: block;line-height: 30px;
+            }
+        }
+    }
+}

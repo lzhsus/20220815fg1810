@@ -1,0 +1,15 @@
+{
+	"permissions": {
+		"openapi": [
+			"subscribeMessage.getCategory",
+			"subscribeMessage.getTemplateList",
+			"subscribeMessage.getPubTemplateKeyWordsById",
+			"subscribeMessage.send"
+		]
+	},
+	"triggers": [{
+		"name": "subscribeMessage",
+		"type": "timer",
+		"config": "0 0 9,18 * * * *"
+	}]
+}

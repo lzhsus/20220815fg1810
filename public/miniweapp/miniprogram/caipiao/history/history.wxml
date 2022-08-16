@@ -1,0 +1,33 @@
+<view class="today-view-mian">
+    <view class="rule-icon" bindtap="openChangeRule"><text>活动规则</text></view>
+    <view class="head-box">
+        <view class="head-main">
+            <view class="item">共产生<text class="num red">{{consume_count}}</text>条数据，消费人民币<text class="place red">-{{consumeNum}}</text>元</view>
+            <view class="item">中奖次数<text class="num red">{{win_count}}</text>条数据，获得人民币<text class="place red">+{{priceNum}}</text>元</view>
+        </view>
+    </view>
+    <view class="today-view-y">
+        <view class="item-box" wx:for="{{todayDayList}}" wx:key="index">
+            <view class="win-show" wx:if="{{item.win_code&&item.win_code.length>5}}"></view>
+            <view class="head">
+                <view class="day" bindtap="selectTodayTiem" data-index="{{index}}">{{item.day2}}：<text class="period" >第{{item.period||"-未知-"}}期</text></view>
+                <view class="win" wx:if="{{item.win_code&&item.win_code.length>5}}">
+                    <text wx:for="{{item.win_code}}" wx:for-item="item05" wx:for-index="index7" wx:key="index6"
+                        class="{{index7<5?'active':'active2'}}">{{item05}}</text>
+                </view>
+            </view> 
+            <view wx:for="{{item.list2}}" wx:for-item="item03" wx:key="inde2x" class="item {{item.win_code&&item.win_code.length>5&&item03.price<=0?'no_win':''}}">
+                <text wx:for="{{item03.list}}" wx:for-item="item02" wx:key="index3"
+                    class="{{item02.type==1?'active':'active2'}} {{item02.show?'win':''}}">{{item02.num}}</text>
+                <view class="price {{item03.price>0?'red':''}}" wx:if="{{item.win_code&&item.win_code.length>5}}">{{item03.price||0}}</view>
+                <view class="price" wx:else>未开奖</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="pop" wx:if="{{popShow=='rule'}}">
+    <view class="pop-content" bindtap="cloreChangeRule">
+        <image src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/jisuan-icon.png?sign=f2afad73f34f79968a8f4e885b8e8d35&t=1627976965" class="img100" mode="widthFix" />
+    </view>
+</view>

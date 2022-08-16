@@ -1,0 +1,23 @@
+page {
+  background: #f5f5f5;
+}
+.tag-box {
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.tag-box .van-tag {
+  margin: 2px;
+}
+.hint {
+  width: 700px;
+  padding: 12rpx;
+  font-size: 12px;
+  color: red;
+}
+.hint span {
+  font-size: 20px;
+  font-weight: bold;
+}
+.hint span.g {
+  color: #1989fa;
+}

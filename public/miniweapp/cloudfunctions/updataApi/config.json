@@ -1,0 +1,33 @@
+{
+	"permissions": {
+		"openapi": [
+      "wxacode.get",
+      "subscribeMessage.send",
+      "subscribeMessage.addTemplate",
+      "templateMessage.send",
+      "templateMessage.addTemplate",
+      "templateMessage.deleteTemplate",
+      "templateMessage.getTemplateList",
+      "templateMessage.getTemplateLibraryById",
+      "templateMessage.getTemplateLibraryList",
+      "CloudPay.unifiedOrder",
+      "CloudPay.queryOrder()",
+      "CloudPay.closeOrder()",
+      "CloudPay.refund()",
+      "CloudPay.queryRefund()",
+      "CloudPay.downloadBill()",
+      "cloud.uploadFile",
+      "wxacode.createQRCode",
+      "uniformMessage.send",
+      "cloud.getVoIPSign",
+      "updatableMessage.createActivityId",
+      "updatableMessage.setUpdatableMsg",
+      "serviceMarket.invokeService"
+		]
+	},
+	"triggers": [{
+		"name": "subscribeMessage",
+		"type": "timer",
+		"config": "*/5 * * * * * *"
+	}]
+}

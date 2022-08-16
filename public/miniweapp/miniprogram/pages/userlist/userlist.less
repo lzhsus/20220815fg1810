@@ -1,0 +1,49 @@
+page{
+    background: rgb(245, 245, 245);
+}
+#userList{
+    .search-box{
+        width: 100%;height: 48px;
+        .search-main{
+            position: fixed;top: 0;left: 0;width: 100%;height: 48px;
+            box-shadow: 0 0 12rpx rgba(53, 53, 53,0.2);background: #fff;z-index: 999;
+        }
+    }
+    .main{
+        width: 700rpx;margin:20rpx auto;
+        .title{
+            width: 100%;background: #fff;border-radius: 12rpx;padding: 20rpx;box-sizing: border-box;
+            font-size: 16px;color: #000;font-weight: bold;margin-bottom: 12rpx;
+        }
+        .li{
+            border-radius: 20rpx;padding: 20rpx;box-sizing: border-box;width: 100%;
+            display: flex;justify-content: flex-start;align-items: center;
+            background: rgb(255, 255, 255);margin:0 auto 12rpx;
+            .img-cover{
+                width: 150rpx;height: 150rpx;min-width: 150rpx;max-width: 150rpx;
+                background: url(https://thirdwx.qlogo.cn/mmopen/vi_32/POgEwh4mIHO4nibH0KlMECNjjGxQUq24ZEaGT4poC6icRiccVGKSyXwibcPq4BWmiaIGuG1icwxaQX6grC9VemZoJ8rg/132) center center no-repeat;
+                background-size: cover;border-radius: 12rpx;overflow: hidden;
+            }
+            .user-info{
+                padding-left: 20rpx;box-sizing: border-box;
+                display: flex;justify-content: flex-start;
+                flex-direction: column;
+                font-size: 12px;color: rgb(53, 53, 53);
+                .item{
+                    display: flex;justify-content: stretch;align-items: flex-start;padding: 2px 0;
+                    .value{
+                        white-space: nowrap;
+                        &.red{
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+        .nodata{
+            width: 100%;padding: 20px 0;box-sizing: border-box;
+            font-size: 14px;color: #999;text-align: center;font-weight: bold;letter-spacing: 2px;
+            background: #fff;border-radius: 20rpx;
+        }
+    }
+}

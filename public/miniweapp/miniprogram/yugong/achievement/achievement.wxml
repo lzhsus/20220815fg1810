@@ -1,0 +1,6 @@
+
+<view class="no-data">敬请期待...</view>
+
+
+
+<yugongFooter pageTitle="achievement" wx:if="{{!pageUnload}}"></yugongFooter>

@@ -1,0 +1,28 @@
+<view id="loglist">
+    <view class="head-main">
+        <view class="head-top">
+            <view class="sport-info {{isindex==1?'active':''}}" bindtap="changeTabIndex" data-index="1">
+                <view class="step font-eighty-eight">{{runInfo.total.step_t}}</view>
+                <view class="title">脚步</view>
+                <view class="desc">七月走了</view>
+            </view>
+            <view class="sport-info {{isindex==2?'active':''}}" bindtap="changeTabIndex" data-index="2">
+                <view class="step font-eighty-eight">{{runInfo.total.calorie_t}}</view>
+                <view class="title">卡路里</view>
+                <view class="desc">七月消耗</view>
+            </view>
+        </view>
+    </view>
+    <view class="list">
+        <block wx:for="{{stepList}}" wx:key="index">
+            <view class="li" wx:if="{{isindex==1}}">
+                <view class="step"><text class="font-eighty-eight">{{item.step_t}}</text> <text>步</text></view>
+                <view class="time font-eighty-eight">{{item.time}}</view>
+            </view>
+            <view class="li" wx:if="{{isindex==2}}">
+                <view class="calorie"><text class="font-eighty-eight">{{item.calorie_t}}</text> <text>卡路里</text></view>
+                <view class="time font-eighty-eight">{{item.time}}</view>
+            </view>
+        </block>
+    </view>
+</view>

@@ -1,0 +1,17 @@
+<div class="canvas-box">
+    <canvas style="width:1px; height: 1px;position: fixed;top: 0;left: -999rpx;" id="hitTestCanvas"
+        canvas-id="hitTestCanvas" type="2d"></canvas>
+    <canvas style="width:1px; height: 1px;position: fixed;top: 0;left: -999rpx;" id="cacheCanvas"
+        canvas-id="cacheCanvas" type="2d"></canvas>
+    <canvas disable-scroll="true" id="canvas" type="2d" style="width: {{canvasW}}px; height: {{canvasH}}px;"
+        canvas-id="canvas" bindtouchstart="canvasEvent" bindtouchmove="canvasEvent" bindtouchend="canvasEvent"
+        bindtouchcancel="canvasEvent" bindlongtap="canvasEvent">
+      
+        </canvas>
+</div>
+<view class="time-box">
+	{{timeText}}
+</view>
+<view class="pop" wx:if="{{countDownTime>=1}}">
+    <view class="count-text">{{countDownTime<=0?'GO':countDownTime}}</view>
+</view>
