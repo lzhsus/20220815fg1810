@@ -1,0 +1,114 @@
+import appConfig from '../../common/app_config';
+
+let _num = (speed,num)=>{
+    let arr = [];
+    for(let i=1;i<999;i++){
+        arr.push(speed*(i*100))
+    }
+    return arr;
+}
+const customs = [{
+    id:1,
+    name:"草丛",
+    num:0,
+    speed:"0.1",
+    nextNum:10,
+    _num:[],
+    desc:"人类文明的繁衍，重曹冲开始！",
+    isOpen:true,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+},{
+    id:2,
+    name:"《九阳神功》",
+    num:0,
+    speed:"0.5",
+    nextNum:50,
+    _num:[],
+    desc:"人类文明的繁衍，重曹冲开始！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/game-icon002.jpg",
+},{
+    id:3,
+    name:"神族水晶",
+    num:0,
+    speed:"2",
+    nextNum:100,
+    _num:[],
+    desc:"神族金坷垃技术，提升人口亩产！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/game-icon003.jpg",
+},{
+    id:4,
+    name:"克隆装置",
+    num:0,
+    speed:"4",
+    nextNum:1000,
+    _num:[],
+    desc:"基因技术--无性批量繁殖！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+},{
+    id:5,
+    name:"虫巢",
+    num:0,
+    speed:"8",
+    nextNum:2000,
+    _num:[],
+    desc:"超强繁殖力赋予！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+},{
+    id:6,
+    name:"奥林匹斯神山",
+    num:0,
+    speed:"16",
+    nextNum:3000,
+    _num:[],
+    desc:"神界之力，无尽的生命力赋予！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+},{
+    id:7,
+    name:"超次元航母",
+    num:0,
+    speed:"32",
+    nextNum:4000,
+    _num:[],
+    desc:"开启宇宙繁殖新纪元！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+},{
+    id:8,
+    name:"时光隧道",
+    num:0,
+    speed:"64",
+    nextNum:5000,
+    _num:[],
+    desc:"回到过去与未来，多次繁殖！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+},{
+    id:9,
+    name:"银河系",
+    num:0,
+    speed:"128",
+    nextNum:6000,
+    _num:[],
+    desc:"一个银河已经容纳不下我们了！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+},{
+    id:10,
+    name:"地狱之门",
+    num:0,
+    speed:"236",
+    _num:[],
+    desc:"通往多维空间繁殖的通道！",
+    isOpen:false,
+    img:appConfig.ossPath+"static/image/yugong/ren-icon.gif",
+}].map(item=>{ 
+    item._num = _num(item.speed,item.num)
+    return item;
+});
+console.log('customs',customs)
+module.exports = customs;

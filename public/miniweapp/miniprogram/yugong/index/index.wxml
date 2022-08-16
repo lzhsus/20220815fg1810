@@ -1,0 +1,41 @@
+<view class="yugong-page" wx:if="{{pageShow=='index'}}">
+    <view class="yugong-header">
+        <view class="yugong-header-main">
+            <view class="top">
+                <view class="number">当前共 {{userInfo.childNumber}} 个子孙</view>
+                <view class="number">{{userInfo._createChildSpeed}} /秒（击败了全球 100% 的人）</view>
+            </view>
+            <view class="house-img" bindtap="tickClickHouse">
+                点击该区域生成子孙
+            </view>
+        </view>
+    </view>
+    <!-- 关卡 -->
+    <view class="customs-list">
+        <block wx:for="{{customsList}}" wx:key="index">
+            <view class="li" wx:if="{{item.isOpen}}">
+                <view class="add-icon" bindtap="openJoinCustom" data-item="{{item}}" data-index="{{index}}">+</view>
+                <view class="title">{{item.name}} x{{item.num}}</view>
+                <view class="mian">
+                    <view class="icon" wx:for="{{item.num}}" wx:for-item="item2" wx:if="{{index<8}}" wx:key="index"><image src="{{item.img}}" class="img100" mode="widthFix" /></view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+</view>
+
+<yugongFooter pageTitle="index" wx:if="{{!pageUnload}}"></yugongFooter>
+
+<!-- 弹窗 -->
+<view class="pop" wx:if="{{popShow=='_editCustoms'}}">
+    <view class="pop-content">
+        <view class="close-icon" bindtap="closePop">X</view>
+        <view class="title">{{_editCustomsItem.name}}</view>
+        <view class="li">需要派遣{{_editCustomsItem.needChild}}个子孙！</view>
+        <view class="li">当前共有：{{_editCustomsItem.num}}</view>
+        <view class="li">{{_editCustomsItem.desc}}</view>
+        <view class="li _next" wx:if="{{_editCustomsItem._next&&_editCustomsItem.num<_editCustomsItem._next}}">开启下一级，当前等需加入子孙{{_editCustomsItem._next}}</view>
+        <view class="btn" bindtap="submitCustoms">确认派遣</view>
+    </view>
+</view>

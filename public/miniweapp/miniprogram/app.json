@@ -1,0 +1,174 @@
+{
+	"pages": [
+		"pages/my/my",
+		"pages/index/index",
+		"pages/boast/boast",
+		"pages/emotional/emotional",
+		"pages/demo/demo",
+		"pages/test/test",
+		"pages/ranking/ranking",
+		"pages/verse/verse",
+		"pages/magicgirl/magicgirl",
+		"pages/manager/manager",
+		"pages/recharge/recharge",
+		"pages/active/active",
+		"pages/orc/orc",
+		"pages/petdata/petdata",
+		"pages/dogdetail/dogdetail",
+		"pages/setting/setting",
+		"pages/run/run",
+		"pages/garbage/garbage",
+		"pages/userlist/userlist",
+		"pages/webview/webview"
+	],
+	"subpackages":[
+        {
+            "root": "sports/",
+            "pages": [
+				"log/log",
+				"running/running",
+				"haibao/haibao"
+            ]
+		},
+		{
+            "root": "forum/",
+            "pages": [
+				"index/index",
+				"create/create",
+				"detail/detail"
+            ]	
+		},
+		{
+            "root": "college/",
+            "pages": [
+				"index/index",
+				"updata/updata",
+				"chart/chart"
+            ]
+		},
+		{
+            "root": "garbage/",
+            "pages": [
+				"index/index",
+				"search/search"
+            ]
+		},
+		{
+            "root": "tianapi/",
+            "pages": [
+				"pyqwenan/pyqwenan"
+            ]
+		},
+		{
+            "root": "caipiao/",
+            "pages": [
+				"index/index",
+				"history/history"
+            ]
+		},
+		{
+            "root": "promotion/",
+            "pages": [
+				"index/index"
+            ]
+		},
+		{
+            "root": "challenge/",
+            "pages": [
+				"index/index",
+				"qa/qa",
+				"up/up",
+				"ranking/ranking"
+            ]
+		},
+		{
+            "root": "member/",
+            "pages": [
+				"userinfo/userinfo"
+            ]
+		},
+		{
+            "root": "yugong/",
+            "pages": [
+				"index/index",
+				"mountains/mountains",
+				"shop/shop",
+				"achievement/achievement"
+            ]
+		},
+		{
+            "root": "cartoon/",
+            "pages": [
+				"index/index"
+            ]
+		}
+		
+	],
+	"tabBar": {
+		"color": "#8a8a8a",
+		"selectedColor": "#13227a",
+		"list": [{
+				"pagePath": "pages/petdata/petdata",
+				"text": "宠物狗",
+				"iconPath": "./status/nav-icon3.png",
+				"selectedIconPath": "./status/nav-icon3-active.png"
+			},{
+				"pagePath": "pages/index/index",
+				"text": "讲笑话情话",
+				"iconPath": "./status/nav-icon1.png",
+				"selectedIconPath": "./status/nav-icon1-active.png"
+			},{
+				"pagePath": "pages/run/run",
+				"text": "运动",
+				"iconPath": "./status/nav-icon5.png",
+				"selectedIconPath": "./status/nav-icon5-active.png"
+			},
+			{
+				"pagePath": "pages/garbage/garbage",
+				"text": "垃圾分类",
+				"iconPath": "./status/nav-icon2.png",
+				"selectedIconPath": "./status/nav-icon2-active.png"
+			},
+			{
+				"pagePath": "pages/my/my",
+				"text": "个人中心",
+				"iconPath": "./status/nav-icon4.png",
+				"selectedIconPath": "./status/nav-icon4-active.png"
+			}
+		]
+	},
+	"window": {
+		"backgroundColor": "#F6F6F6",
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#F6F6F6",
+		"navigationBarTitleText": "demo",
+		"navigationBarTextStyle": "black"
+	},
+	"sitemapLocation": "sitemap.json",
+	"servicemarket": true,
+	"permission": {
+		"scope.userLocation": {
+			"desc": "根据用户当前位置获取实时天气信息"
+		}
+	},
+	"usingComponents": {
+		"van-button": "./components/vant/button/index",
+		"van-tab": "./components/vant/tab/index",
+		"van-tabs": "./components/vant/tabs/index",
+		"van-switch": "./components/vant/switch/index",
+		"van-search": "./components/vant/search/index",
+		"van-field": "./components/vant/field/index",
+		"van-tag": "./components/vant/tag/index"
+
+	},
+	"plugins": {
+        "WechatSI": {
+            "version": "0.3.4",
+            "provider": "wx069ba97219f66d99"
+		},
+		"ocr-plugin": {
+			"version": "3.0.6",
+			"provider": "wx4418e3e031e551be"
+		}
+	}
+}

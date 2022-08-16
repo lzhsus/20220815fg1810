@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "yugongFooter":"/components/yugong_footer/yugong_footer"
+  },
+  "navigationBarTitleText": ""
+}

@@ -1,0 +1,8 @@
+<view class="content-weapper" id="rankingWeapp">
+    <view class="item" wx:for="{{rankingList}}" wx:key="index">
+        <view class="item-rank-num">{{index+1}}</view>
+        <view class="item-img"><image class="img100" src="{{item.avatarUrl}}" mode="widthFix" /></view>
+        <view class="item-rank-name">{{item.nickName||'游客'}}</view>
+        <view class="item-score">{{item.timetext}}</view>
+    </view>
+</view>

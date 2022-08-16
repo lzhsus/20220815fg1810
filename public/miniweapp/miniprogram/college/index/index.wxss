@@ -1,0 +1,205 @@
+.weapp {
+  overflow: hidden;
+}
+.weapp .module {
+  width: 710rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+  margin: 30rpx auto;
+  background: #fff;
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
+}
+.weapp .module .title {
+  font-size: 16px;
+  color: #303133;
+  font-weight: bold;
+  line-height: 100rpx;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.weapp .module .title .select-icon {
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+}
+.weapp .module .title .more {
+  font-size: 10px;
+  color: #606266;
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.weapp .module .title .e-tu {
+  position: absolute;
+  top: 50%;
+  left: 50rpx;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+.weapp .module .time {
+  padding: 12rpx 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.weapp .module .time .txt {
+  display: block;
+  padding: 4px 12px;
+  border: 1px solid #E4E7ED;
+  margin-right: 12rpx;
+  margin-bottom: 12rpx;
+  font-size: 10px;
+  color: #909399;
+}
+.weapp .module .time .txt.active {
+  background: #67C23A;
+  color: #fff;
+}
+.weapp .module .score-box {
+  border: 1px solid #606266;
+  box-sizing: border-box;
+}
+.weapp .module .score-box .thead {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  color: #303133;
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 1px solid #303133;
+}
+.weapp .module .score-box .thead .view1 {
+  width: 40%;
+  min-width: 40%;
+  padding: 4px;
+  box-sizing: border-box;
+  border-right: 1px solid #DCDFE6;
+}
+.weapp .module .score-box .thead .view2 {
+  width: 30%;
+  min-width: 30%;
+  padding: 4px;
+  box-sizing: border-box;
+  border-right: 1px solid #DCDFE6;
+}
+.weapp .module .score-box .thead .view3 {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.weapp .module .score-box .tbady .tr {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 10px;
+  color: #303133;
+  box-sizing: border-box;
+  text-align: center;
+  border-bottom: 1px solid #DCDFE6;
+}
+.weapp .module .score-box .tbady .tr .view1 {
+  width: 40%;
+  min-width: 40%;
+  padding: 4px;
+  box-sizing: border-box;
+  border-right: 1px solid #DCDFE6;
+}
+.weapp .module .score-box .tbady .tr .view2 {
+  width: 30%;
+  min-width: 30%;
+  padding: 4px;
+  box-sizing: border-box;
+  border-right: 1px solid #DCDFE6;
+}
+.weapp .module .score-box .tbady .tr .view3 {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+.weapp .module .score-box .tbady .no-data {
+  padding: 100rpx;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+.pop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+.pop .pop-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600rpx;
+  height: 1000rpx;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 30rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.pop .pop-content .main {
+  width: 100%;
+  height: 800rpx;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.pop .pop-content .main .value {
+  border-radius: 12rpx;
+  padding: 12rpx;
+  margin-bottom: 12rpx;
+  text-align: center;
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+  display: block;
+}
+.pop .pop-content .main .value.active {
+  background: cadetblue;
+  color: #fff;
+}
+.pop .pop-content .btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  margin: 20rpx auto;
+}
+.pop .pop-content .btn-box .btn2 {
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 12rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: #909399;
+  margin: 0 12rpx;
+}
+.pop .pop-content .btn-box .btn3 {
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 12rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: #67C23A;
+  margin: 0 12rpx;
+}

@@ -1,0 +1,9 @@
+<view class="index" id="index">
+    <view id="canvasBox">
+        <image wx:if="{{haibaoImgurl}}" src="{{haibaoImgurl}}" class="img100" mode="widthFix" />
+    </view>
+    <view class="footer-box" bindtap="createHaiBaoImage">
+    </view>
+    <view class="canvas-image"><canvas type="2d" id="haibaoCanvas" style="width:{{o.w}}px; height:{{o.h}}px;"></canvas></view>
+</view>
+

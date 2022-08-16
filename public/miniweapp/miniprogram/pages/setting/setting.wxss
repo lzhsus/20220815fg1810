@@ -1,0 +1,42 @@
+#setting {
+  padding: 20px;
+  box-sizing: border-box;
+}
+#setting .van-cell {
+  line-height: 1.6;
+}
+#setting .van-cell .title {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+#setting .van-cell .desc {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#setting .van-cell2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.6;
+}
+#setting .van-cell2 .title {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+#setting .van-cell2 .desc {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+#setting .van-main {
+  width: 100%;
+  min-height: 800rpx;
+  padding: 20px 0;
+}

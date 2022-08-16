@@ -1,0 +1,79 @@
+<view class="page-weapper font-czy175" wx:if="{{pageShow=='index'}}">
+    
+    <view class="query-icon" bindtap="lookQueryIconClick">
+        <image class="img100" src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/my_icon/query-icon.png" mode="widthFix" />
+        <view class="query-main" wx:if="{{queryMainShow}}">
+            <text>1.点击对应的标题获取数据</text>
+            <text>2.点击生成的文案可以进行复制</text>
+            <text>3.每个用户点击次数有限</text>
+            <text>4.后期根据反馈可查看浏览的数据</text>
+        </view>
+    </view>
+    <!-- 微信分享文案 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiPyqwenan">优美文案</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{pyqwenanItem.content}}" wx:if="{{pyqwenanItem.content}}">{{pyqwenanItem.content}}<text class="source" wx:if="{{pyqwenanItem.source}}">来源：{{pyqwenanItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiPyqwenan" wx:if="{{pyqwenanItem.content}}">随机更新</view>
+    </view>
+    <!-- 影视经典台词 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiDialogue">影视经典台词</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{dialogueItem.dialogue}}" wx:if="{{dialogueItem.dialogue}}">{{dialogueItem.dialogue}}<text class="source" wx:if="{{dialogueItem.source}}">来源：{{dialogueItem.source}}</text></view>
+        <view class="content" bindtap="copyViewClick" data-content="{{dialogueItem.english}}" wx:if="{{dialogueItem.english}}">{{dialogueItem.english}}<text class="source" wx:if="{{dialogueItem.source}}">来源：{{dialogueItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiDialogue" wx:if="{{dialogueItem.dialogue||dialogueItem.english}}">随机更新</view>
+    </view>
+    <!-- 互删语句 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiHsjz">互删语句</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{hsjzItem.content}}" wx:if="{{hsjzItem.content}}">{{hsjzItem.content}}<text class="source" wx:if="{{hsjzItem.source}}">来源：{{hsjzItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiHsjz" wx:if="{{hsjzItem.content}}">随机更新</view>
+    </view>
+    <!-- 彩虹屁 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiCaihongpi">彩虹屁</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{caihongpiItem.content}}" wx:if="{{caihongpiItem.content}}">{{caihongpiItem.content}}<text class="source" wx:if="{{caihongpiItem.source}}">来源：{{caihongpiItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiCaihongpi" wx:if="{{caihongpiItem.content}}">随机更新</view>
+    </view>
+    <!-- 舔狗日志 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiTiangou">舔狗日志</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{tiangouItem.content}}" wx:if="{{tiangouItem.content}}">{{tiangouItem.content}}<text class="source" wx:if="{{tiangouItem.source}}">来源：{{tiangouItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiTiangou" wx:if="{{tiangouItem.content}}">随机更新</view>
+    </view>
+    <!-- 毒鸡汤 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiDujitang">毒鸡汤</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{dujitangItem.content}}" wx:if="{{dujitangItem.content}}">{{dujitangItem.content}}<text class="source" wx:if="{{dujitangItem.source}}">来源：{{dujitangItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiDujitang" wx:if="{{dujitangItem.content}}">随机更新</view>
+    </view>
+    <!-- 早安心语 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiZaoan">早安心语</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{zaoanItem.content}}" wx:if="{{zaoanItem.content}}">{{zaoanItem.content}}<text class="source" wx:if="{{zaoanItem.source}}">来源：{{zaoanItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiZaoan" wx:if="{{zaoanItem.content}}">随机更新</view>
+    </view>
+    <!-- 晚安心语 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiWanan">晚安心语</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{wananItem.content}}" wx:if="{{wananItem.content}}">{{wananItem.content}}<text class="source" wx:if="{{wananItem.source}}">来源：{{wananItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiWanan" wx:if="{{wananItem.content}}">随机更新</view>
+    </view>
+    <!--生活小技巧 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiQiaomen">生活小技巧</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{qiaomenItem.content}}" wx:if="{{qiaomenItem.content}}">{{qiaomenItem.content}}<text class="source" wx:if="{{qiaomenItem.source}}">来源：{{qiaomenItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiQiaomen" wx:if="{{qiaomenItem.content}}">随机更新</view>
+    </view>
+    <!-- 健康小提示 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiHealthtip">健康小提示</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{healthtipItem.content}}" wx:if="{{healthtipItem.content}}">{{healthtipItem.content}}<text class="source" wx:if="{{healthtipItem.source}}">来源：{{healthtipItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiHealthtip" wx:if="{{healthtipItem.content}}">随机更新</view>
+    </view>
+    <!-- 土味情话 -->
+    <view class="module-item">
+        <view class="title" bindtap="getTianapiSaylove">土味情话</view>
+        <view class="content" bindtap="copyViewClick" data-content="{{sayloveItem.content}}" wx:if="{{sayloveItem.content}}">{{sayloveItem.content}}<text class="source" wx:if="{{sayloveItem.source}}">来源：{{sayloveItem.source}}</text></view>
+        <view class="btn" bindtap="getTianapiSaylove" wx:if="{{sayloveItem.content}}">随机更新</view>
+    </view>
+</view>

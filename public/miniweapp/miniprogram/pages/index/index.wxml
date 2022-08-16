@@ -1,0 +1,42 @@
+<!-- 随机入口 -->
+<!-- <movable-area style="width:{{windowWidth}}px;height:{{windowHeight}}px;">
+    <movable-view direction="all" x="{{x}}" y="{{y}}" out-of-bounds bindchange="move" bindtouchend="touchEnd" bindtouchstart="touchStart"></movable-view>
+</movable-area> -->
+
+<view class="content-weapper" id="indexWeapp">
+    <view class="main" id="mainWeapp">
+        <scroll-view scroll-y style="height: 100%;" scroll-top="{{scrollTop}}">
+        <block wx:for="{{dialogueLog}}" wx:key="index">
+            <view class="main-li li my-item" wx:if="{{item.type==1}}">
+                <view class="msg-text">
+                    <text class="msg">{{item.msg}}</text>
+                    <text class="time">{{item.time}}</text>
+                </view>
+                <view class="avater"><open-data type="userAvatarUrl"></open-data></view>
+            </view>
+            <view class="main-li li ai-item" wx:if="{{item.type==2}}">
+                <view class="avater"><image src="{{item.avatar}}" class="img100" mode="widthFix"/></view>
+                <view class="msg-text">
+                    <text class="msg" bindtap="copyClick" data-msg="{{item.msg}}">{{item.msg}}</text>
+                    <text class="time">{{item.time}}</text>
+                </view>
+            </view>
+        </block>
+        </scroll-view>
+    </view>
+    <view class="send-input">
+        <view class="send-input-fixed">
+            <view class="tages">
+                <text bindtap="changeTageClick" class="text" data-mode="1" data-text="冷笑话">冷笑话</text>
+                <text bindtap="changeTageClick" class="text" data-mode="2" data-text="普通笑话">普通笑话</text>
+                <text bindtap="changeTageClick" class="text" data-mode="3" data-text="浪漫情话">浪漫情话</text>
+                <text bindtap="changeTageClick" class="text" data-mode="4" data-text="土味情话">土味情话</text>
+                <text bindtap="changeTageClick" class="text" data-mode="5" data-text="心灵鸡汤">心灵鸡汤</text>
+            </view>
+            <view class="input-box">
+                <textarea class="report-ipt {{isIOS?'ios-ipt':''}}" bindinput="bindinput" disabled="true" value="{{postCommentValue}}" placeholder="请选择类型..." cursor-spacing="20" auto-height fixed='true' />
+                <view class="btn" hover-class="btn-hover" bindtap="sendClickMsg">发送</view>
+            </view>
+        </view>
+    </view>
+</view>

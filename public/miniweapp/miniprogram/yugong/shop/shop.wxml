@@ -1,0 +1,5 @@
+<!--yugong/shop/shop.wxml-->
+<text>yugong/shop/shop.wxml</text>
+
+
+<yugongFooter pageTitle="shop" wx:if="{{!pageUnload}}"></yugongFooter>

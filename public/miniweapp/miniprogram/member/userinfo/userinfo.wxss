@@ -1,0 +1,71 @@
+#memberUserInfo .input-box {
+  margin-bottom: 100rpx;
+}
+#memberUserInfo .input-box .item {
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #000;
+}
+#memberUserInfo .input-box .item .key {
+  flex-shrink: 0;
+}
+#memberUserInfo .input-box .item .value {
+  font-weight: bold;
+}
+#memberUserInfo .input-box .item .value.img {
+  width: 150rpx;
+  height: 150rpx;
+  border: 1px solid #f7f6f6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#memberUserInfo .input-box .item .value .ipt {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+#memberUserInfo .input-box .item .value picker,
+#memberUserInfo .input-box .item .value .picker {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#memberUserInfo .input-box .item .value picker.p,
+#memberUserInfo .input-box .item .value .picker.p {
+  color: #ccc;
+}
+#memberUserInfo .input-box .hint {
+  font-size: 10px;
+  color: #ccc;
+  padding: 4px 10px;
+  text-align: right;
+}
+#memberUserInfo .submit {
+  width: 350rpx;
+  height: 90rpx;
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 18px;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: #fff;
+  box-shadow: 0 0 20rpx rgba(105, 105, 105, 0.1);
+  margin: 50rpx auto;
+}
+#memberUserInfo .hint {
+  padding: 12rpx;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 10px;
+  color: #999;
+}

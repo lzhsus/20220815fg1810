@@ -1,0 +1,32 @@
+<view id="dog" wx:if="{{pageShow}}">
+    <view class="tab">
+        <view class="tab-fixed">
+            <scroll-view class="scroll-view" scroll-x="{{true}}" enhanced="{{true}}" style="height: 40px;">
+                <block wx:for="{{tabLis}}">
+                    <view bindtap="tabChangeClick" data-id="{{item.id}}" class="tab-item {{tabIndex==item.id?'active':''}}" >{{item.name}}</view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="main">
+        <block wx:for="{{petList}}" wx:key="index">
+            <view class="item" bindtap="openDogDetail" data-petID="{{item.petID}}" data-coverURL="{{item.coverURL}}" data-type="{{item.type}}">
+                <view class="img" style="background-image:url({{item.coverURL}})"></view>
+                <view class="info">
+                    <view class="gender {{item.gender==1?'boy':'girl'}}"></view>
+                    <view class="name">{{item.name}}</view>
+                    <view class="env-name">{{item.engName}}</view>
+                    <view class="price">
+                        <text wx:if="{{item.price}}">￥{{item.price}}</text>
+                    </view>
+                    <view class="more-info">
+                        <view class="age">
+                            <text class="age-icon"></text><text>{{item.count||0}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="no-data">------ 已全部加载 ------</view>
+</view>

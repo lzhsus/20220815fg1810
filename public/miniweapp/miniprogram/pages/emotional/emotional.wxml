@@ -1,0 +1,36 @@
+<view class="content-weapper" id="boastWeapp">
+    <view class="main" id="mainWeapp">
+        <scroll-view scroll-y style="height: 100%;" scroll-top="{{scrollTop}}">
+        <block wx:for="{{dialogueLog}}" wx:key="index">
+            <view class="main-li li my-item" wx:if="{{item.type==1}}">
+                <view class="msg-text">
+                    <text class="msg">{{item.msg}}</text>
+                    <text class="time">{{item.time}}</text>
+                </view>
+                <view class="avater"><open-data type="userAvatarUrl"></open-data></view>
+            </view>
+            <view class="main-li li ai-item" wx:if="{{item.type==2}}">
+                <view class="avater"><image src="{{item.avatar}}" class="img100" mode="widthFix"/></view>
+                <view class="msg-text">
+                    <view class="msg">
+                        <block wx:for="{{item.msg}}" wx:for-item="item2" wx:key="index2">
+                            <view class="msg-item" wx:if="{{item2.type==1}}"><text class="text01">{{item2.name}}</text> <text>{{item2.value}}</text></view>
+                            <view class="msg-item" wx:if="{{item2.type==2}}"><text class="text02">{{item2.name}}</text> <text>{{item2.value}}</text></view>
+                            <view class="msg-item" wx:if="{{item2.type==3}}"><text class="text03">{{item2.name}}</text> <text>{{item2.value}}</text></view>
+                        </block>
+                    </view>
+                    <text class="time">{{item.time}}</text>
+                </view>
+            </view>
+        </block>
+        </scroll-view>
+    </view>
+    <view class="send-input">
+        <view class="send-input-fixed">
+            <view class="input-box">
+                <textarea class="report-ipt {{isIOS?'ios-ipt':''}}" bindinput="bindinput" maxlength="50" value="{{postCommentValue}}" placeholder="请输入内容（50字以内）" cursor-spacing="20" auto-height fixed='true' />
+                <view class="btn" hover-class="btn-hover" bindtap="sendClickMsg">发送</view>
+            </view>
+        </view>
+    </view>
+</view>

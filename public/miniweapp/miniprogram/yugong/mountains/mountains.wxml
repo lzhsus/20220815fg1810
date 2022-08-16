@@ -1,0 +1,4 @@
+<!--yugong/mountains/mountains.wxml-->
+<text>yugong/mountains/mountains.wxml</text>
+
+<yugongFooter pageTitle="mountains" wx:if="{{!pageUnload}}"></yugongFooter>

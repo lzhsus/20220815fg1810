@@ -1,0 +1,50 @@
+<view class="qa_id" id="qaId" wx:if="{{pageShow=='index'}}">
+
+    <view class="main-box">
+        <view class="h1">{{qaItem.qa.issue}}</view>
+        <view class="sel-item {{qaItem.qa_choice=='A'?'choice':''}}" bindtap="choiceQaItem" data-key="A">
+            <span class="key">A：</span>{{qaItem.qa.A}}
+        </view>
+        <view class="sel-item {{qaItem.qa_choice=='B'?'choice':''}}" bindtap="choiceQaItem" data-key="B">
+            <span class="key">B：</span>{{qaItem.qa.B}}
+        </view>
+        <view class="sel-item {{qaItem.qa_choice=='C'?'choice':''}}" bindtap="choiceQaItem" data-key="C">
+            <span class="key">C：</span>{{qaItem.qa.C}}
+        </view>
+        <view class="sel-item {{qaItem.qa_choice=='D'?'choice':''}}" bindtap="choiceQaItem" data-key="D">
+            <span class="key">D：</span>{{qaItem.qa.D}}
+        </view>
+        <view class="hint">*点击上面的选项，选择正确的答案</view>
+        <view class="isQaResult red" wx:if="{{isQaResult==0}}">回答错误</view>
+        <view class="isQaResult " wx:if="{{isQaResult==1}}">回答正确</view>
+    </view>
+
+</view> 
+
+<!-- 结束弹窗 -->
+<view class="pop" wx:if="{{gameOver}}">
+    <view class="pop-contnet">
+        <view class="title">答题结束</view>
+        <view class="main">
+            <view class="item">
+                <view class="key">当前关卡：</view>
+                <view class="value">第{{resultData.level}}关，编号{{resultData.code}}</view>
+            </view>
+            <view class="item">
+                <view class="key">得分：</view>
+                <view class="value">{{resultData.score}}</view>
+            </view>
+            <view class="item">
+                <view class="key">分数等级：</view>
+                <view class="value" wx:if="{{resultData.score>=12}}">3 颗星</view>
+                <view class="value" wx:elif="{{resultData.score>=6}}">2 颗星</view>
+                <view class="value" wx:elif="{{resultData.score>=1}}">1 颗星</view>
+                <view class="value" wx:else>暂无</view>
+            </view>
+            <view class="btn-box">
+                <van-button bindtap="againGame" size="small" type="primary">再来一次</van-button>
+                <van-button bindtap="backHome" size="small" type="default">返回首页</van-button>
+            </view>
+        </view> 
+    </view>
+</view>

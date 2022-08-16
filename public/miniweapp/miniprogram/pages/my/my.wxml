@@ -1,0 +1,137 @@
+<view class="content-weapper" id="myWeapp">
+    <view class="head-top">
+        <view class="set-icon" bindtap="opensetPage" wx:if="{{userInfo.avatarUrl}}"></view>
+        <view class="user-msg-box" bindtap="getUserProfile" data-updata="true">                    
+            <view class="cuserAvatarUrl">
+                <view><open-data type="userAvatarUrl"></open-data></view>
+            </view>
+            <open-data class="userNickName" type="userNickName"></open-data>
+        </view>
+        <!-- 签到 -->
+        <view class="sigin-box" >
+            <view class="sign-btn">每日签到
+                <text wx:if="{{userInfo.avatarUrl}}" bindtap="siginClick"></text>
+                <button wx:else bindtap="getUserProfile"></button>
+            </view>
+            <view class="query-icon" bindtap="lookQueryIconClick">
+                <image class="img100" src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/my_icon/query-icon.png" mode="widthFix" />
+                <view class="query-main" wx:if="{{queryMainShow}}">用户每日可以签到一次，每次签到将将会获取相应的次数奖励。（讲笑话情话+1，情感分析+1，夸夸话术+1）今后也会根据项目的推进有所改进</view>
+            </view>
+        </view>
+        <!-- 编辑用户信息 -->
+        <view class="edit-icon" bindtap="openPageUserInfo">
+            <image src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/user-edit-icon.png?sign=b48f754b5132c6336b6f74b8afb75362&t=1629775112" class="img100" mode="widthFix" />
+        </view>
+    </view>
+    <view class="main">
+        <view class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon00.png)">
+            <text class="value">讲笑话情话</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 {{userInfo.jokebot_msg.count}}</text>
+                <text class="tag02">剩余 {{userInfo.restrict_count.xiaohua-userInfo.jokebot_msg.count}}</text>
+            </view>
+        </view>
+        <view class="item" bindtap="openPageClick" data-path="/pages/emotional/emotional" data-isuser="0" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon01.png)">
+            <text class="value">情感分析</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 {{userInfo.emotional_msg.count}}</text>
+                <text class="tag02">剩余 {{userInfo.restrict_count.qinggan-userInfo.emotional_msg.count}}</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/pages/boast/boast" data-isuser="0" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon02.png)">
+            <text class="value">夸夸话术</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 {{userInfo.boast_msg.count}}</text>
+                <text class="tag02">剩余 {{userInfo.restrict_count.kuakua-userInfo.boast_msg.count}}</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/pages/demo/demo" data-isuser="1" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon03.png)">
+            <text class="value">小游戏</text>
+            <view class="ranking" catchtap="rankingClick"><image class="img100" src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/my_icon/raning-icon.png" mode="widthFix" /></view>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/pages/verse/verse" data-isuser="0" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon04.png)">
+            <text class="value">每日诗句</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/pages/manager/manager" data-isuser="0" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon05.png)">
+            <text class="value">同声翻译</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/tianapi/pyqwenan/pyqwenan" data-isuser="0" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon06.png)">
+            <text class="value">经典文案</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/college/index/index" data-isuser="0" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon07.png)">
+            <text class="value">高考分数</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view wx:if="{{userInfo.isCaipiao}}" bindtap="openPageClick" data-isuser="0" data-path="/caipiao/index/index" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon09.png)">
+            <text class="value">彩票</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick2" data-path="" class="item" data-isuser="0" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon10.png)">
+            <text class="value">Api邀请</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/promotion/index/index" data-isuser="0" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon11.png)">
+            <text class="value">客推CLUB</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view bindtap="openPageClick" data-path="/yugong/index/index" data-isuser="0" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon13.png)">
+            <text class="value">愚公移山</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view wx:if="{{userInfo.isSuperAdmin}}" bindtap="openPageClick" data-isuser="0" data-path="/college/updata/updata" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon08.png)">
+            <text class="value">高考更新</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+        <view wx:if="{{userInfo.isSuperAdmin}}" bindtap="openPageClick" data-isuser="0" data-path="/pages/userlist/userlist" class="item" style="background-image:url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon/shiwu-icon12.png)">
+            <text class="value">用户身份</text>
+            <view class="tag-box" wx:if="{{pageShow}}">
+                <text class="tag01">已用 未知</text>
+                <text class="tag02">剩余 未知</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="pop" wx:if="{{invPop}}">
+    <view class="pop-contnet" bindtap="closeClickPop">
+        <image src="https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/my_data/inv_img.png?sign=ca3ef68249cd0f92b4a650cc5d901a85&t=1624013165" class="img100" mode="widthFix" />
+    </view>
+</view>
+
+
+
+

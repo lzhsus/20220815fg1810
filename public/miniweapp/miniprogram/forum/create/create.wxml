@@ -1,0 +1,24 @@
+<view wx:if="{{createShow}}">
+    <block wx:for="{{createList}}" wx:key="index">
+        <view class="module-item">
+            <view class="del" wx:if="{{createList.length>=2}}" data-index="{{index}}" bindtap="delClick">删除</view>
+            <view class="img" bindtap="openImageClick" data-index="{{index}}"> 
+                <view wx:if="{{item.img_url}}" class="img-box"><image src="{{item.img_url}}" class="img100" mode="widthFix"/></view>
+                <text wx:else class="hint">选择图片</text>
+            </view>
+            <view class="desc">
+                <textarea name="" id="" cols="30" rows="10" placeholder="请输入描述信息" data-index="{{index}}" bindinput="bindinput" maxlength="-1"></textarea>
+            </view>
+        </view>
+    </block>
+    <view class="radio-box" bindtap="openAddressData">
+        <radio value="r1" checked="{{addressChecked}}" /> 设置当前位置
+    </view>
+    <view wx:if="{{addressChecked}}" class="address">{{address}}</view>
+
+    <view class="btn-box">
+        <view class="add-data" bindtap="adddataClick">添加一条</view>
+        <view class="btn" bindtap="submitClick">确认提交</view>
+    </view>
+</view>
+<view class="nodata" wx:else>敬请期待...</view>

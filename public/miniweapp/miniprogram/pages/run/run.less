@@ -1,0 +1,191 @@
+
+#sports-index {
+    font-size: 12px;color: #000;
+    .sport-header {
+        display: flex;justify-content: space-between;align-items: stretch;
+        .head-back {
+            width: 200rpx;
+            display: flex;justify-content: space-between;padding: 50px 0 10px 0;box-sizing: border-box;
+            flex-direction: column;align-items: center;
+            .back-icon{
+                width: 70rpx;height: 60rpx;
+                background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/back-icon2.png) center center no-repeat;
+                background-size: 100% 100%;
+            } 
+            .logo-iocn{ 
+                width: 170rpx;height: 70rpx;padding-top: 70rpx;
+                background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/logo.png) center top no-repeat;
+                background-size: 70rpx 70rpx;color: #bfbfbf;text-align: center;
+                transform: rotate(-90deg);
+            }
+        }
+        .head-main {
+            width: 550rpx;height: 500rpx;
+            border-radius: 0 0 0 20rpx;overflow: hidden;
+            background: #4768d9;position: relative;
+            .day-step{
+                position: absolute;top: 180rpx;left: 70rpx;
+                font-size: 12px;color: #fff;
+                display: flex;flex-direction: column;
+                .step{ font-size: 20px;font-weight: bold; }
+            }
+            .run-info{
+                position: absolute;top: 340rpx;left: 70rpx;
+                font-size: 12px;color: #dddddd;
+                display: flex;flex-direction: column;
+                .run-tiem{
+                    display: flex;justify-content: flex-start;align-items: center;
+                    text{
+                        display: flex;justify-content: flex-start;align-items: center;margin-right: 20rpx;
+                        &::before{
+                            display: inline-block;content: '';
+                            width: 3px;height: 3px;border-radius: 50%;
+                            border: 2px solid #dddddd;margin-right: 4px;
+                        }
+                    }
+                }
+                .run-hint{
+                    margin-top: 12rpx;
+                }
+            }
+        }
+    }
+    .sport-module{
+        background:linear-gradient(to bottom, #fff,#f7f7f7);
+        padding: 20px;box-sizing: border-box;
+        .sport-module-title{
+            font-size: 18px;font-weight: bold;
+            display: flex;justify-content: space-between;align-items: center;
+            .more{
+                font-size: 12px;font-weight: normal;color: #999;
+                &::after{
+                    display: inline-block;content: ">";
+                }
+            }
+        }
+        .sport-list{
+            margin-top: 20rpx;margin-bottom: 20rpx;
+            // display: flex;justify-content: center;align-items: center;
+            &.border{
+                border-radius: 20rpx;overflow: hidden;
+            }
+            .sport-item{
+                display: inline-block;margin-top: 15px;margin-right: 20rpx;
+                width: 300rpx;height: 200rpx;border-radius: 20rpx;
+                box-shadow:  0 0 20rpx #eeeeee;
+                background: #fff;
+                &:last-child{ margin-right: 0; }
+                .sport-info{
+                    width: 100%;height: 100%;
+                    padding-left: 100rpx;box-sizing: border-box;
+                    display: flex;justify-content: center;align-items: flex-start;
+                    flex-direction: column;
+                    .step{
+                        font-size: 18px;font-weight: bold;position: relative;
+                        &::after{
+                            position: absolute;top: 50%;left: -60rpx;transform: translateY(-50%);
+                            content: '';display: block;width: 50rpx;height: 50rpx;
+                            background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/run/step-icon.png?sign=c21a67136f270bd9b7f8a332384208f8&t=1618887523) center center no-repeat;
+                            background-size: 100% auto;
+                        }
+                    }
+                    .title{
+                    }
+                    .desc{
+                        color: #d0d0d0;margin-top: 4px;
+                        
+                    }
+                }
+            }
+            .sport-item2{
+                display: inline-block;margin-top: 15px;margin-right: 20rpx;
+                width: 300rpx;height: 200rpx;border-radius: 20rpx;
+                box-shadow:  0 0 20rpx #eeeeee;
+                background: #fff;
+                &:last-child{ margin-right: 0; }
+                .sport-info{
+                    width: 100%;height: 100%;
+                    display: flex;justify-content: center;align-items: center;
+                    flex-direction: column;
+                    .name{
+                        font-size: 18px;font-weight: bold;
+                        display: flex;justify-content: center;align-items: center;
+                        &::before{
+                            content: '';display: block;width: 50rpx;height: 50rpx;margin: 0 12rpx;
+                            background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon-item001.png) center center no-repeat;
+                            background-size: 100% auto;
+                        }
+                        &:last-child{
+                            &::before{
+                                content: '';display: block;width: 50rpx;height: 50rpx;margin: 0 12rpx;
+                                background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/icon-item002.png) center center no-repeat;
+                                background-size: 100% auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 弹窗
+.pop-contnet{
+    width: 600rpx;min-height: 400rpx;border-radius: 20rpx;padding-bottom: 20rpx;box-sizing: border-box;
+    background: #fff;box-shadow: 0 0 12rpx rgba(0, 0, 0, 0.2);
+    .close{
+        position: absolute;top: 0;right: 0;
+        width: 100rpx;height: 100rpx;
+        background: url(https://6c7a-lzhsus-1g4h29bs69c66542-1301447037.tcb.qcloud.la/static/image/close-icon.png) center center no-repeat;
+        background-size: 50rpx 50rpx;
+    }
+    .title{
+        height: 150rpx;text-align: center;line-height: 150rpx;
+        font-size: 22px;color: #000;
+    }
+    .message{
+        font-size: 14px;color: #909399;text-align: center;letter-spacing: 1px;line-height: 2;
+        .input{
+            width: 80%;height: 80rpx;border-radius: 20rpx;overflow: hidden;
+            background: #F2F6FC;margin: 20rpx auto;
+            input{
+                display: block;width: 100%;height: 100%;
+                border: none;padding: 20rpx;box-sizing: border-box;
+                font-size: 14px;color: #000;
+            }
+        }
+        .hint{
+            font-size: 10px;text-align: center;
+        }
+    }
+    .submit{
+        width: 300rpx;height: 80rpx;border-radius: 12rpx;
+        background: #409EFF;margin:20rpx auto;
+        font-size: 18px;font-weight: bold;text-align: center;line-height: 80rpx;color: #fff;
+        
+    }
+}
+#schedule{
+    position: absolute;top:50%;right: -75px;
+    transform: translateY(-50%);
+    .schedule-item{
+        width: 150px;height: 150px;background: #b4c2f1;position: relative;
+        border-radius: 50%;overflow: hidden;
+        &::after{
+            display: block;content: '';
+            position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);
+            border-radius: 50%;background: #4768d9;
+            width: 100px;height: 100px;
+        }
+        .schedule-txt{
+            position: absolute;top: 50%;left: 34px;
+            transform: translateY(-50%);z-index: 999;
+            color: #fff;
+            font-size: 12px;font-weight: bold;
+        }
+        .schedule-rotate{
+            width: 150px;height: 150px;margin-left: 75px;
+            transform: rotate(0deg);transform-origin: left center;
+            background: #ffffff;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<view class="content-weapper" id="verseWeapp" wx:if="{{pageShow}}">
+    <view class="verse-main">
+        <!-- 正文 -->
+        <view class="verse-info">
+            <view class="title">{{verseInfo.origin.title}}</view>
+            <view class="author"><text>{{verseInfo.origin.author}}</text><text>{{verseInfo.origin.dynasty}}</text></view>
+            <view class="content">
+                <text wx:for="{{verseInfo.origin.content}}" wx:key="index">
+                    {{item}}
+                </text>
+            </view>
+            <view class="matchTags">
+                <text wx:for="{{verseInfo.origin.matchTags}}" wx:key="index">{{item}}</text>
+            </view>
+        </view>
+        <!-- 推荐 -->
+        <view class="recommend">
+            <text wx:for="{{verseInfo.contentList}}" wx:key="index">{{item}}</text>
+            <text wx:if="{{!verseInfo.contentList.length}}">暂无推荐</text>
+        </view>
+    </view>
+    <view class="xj-btn {{!isTrue?'active':''}}" bindtap="xjClick">重新随机</view>
+</view>

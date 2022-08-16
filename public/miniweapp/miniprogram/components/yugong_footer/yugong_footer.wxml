@@ -1,0 +1,8 @@
+<view id="yugongFooter" class="yugongFooter">
+    <view class="yugong_footer_main">
+        <view bindtap="changeTabClick" data-page="/yugong/index/index" class="yugong_footer_item {{pageTitle=='index'?'yugong_footer_item_active':''}}">游戏</view>
+        <view bindtap="changeTabClick" data-page="/yugong/mountains/mountains" class="yugong_footer_item {{pageTitle=='mountains'?'yugong_footer_item_active':''}}">移山</view>
+        <view bindtap="changeTabClick" data-page="/yugong/shop/shop" class="yugong_footer_item {{pageTitle=='shop'?'yugong_footer_item_active':''}}">商店</view>
+        <view bindtap="changeTabClick" data-page="/yugong/achievement/achievement" class="yugong_footer_item {{pageTitle=='achievement'?'yugong_footer_item_active':''}}">成就</view>
+    </view>
+</view>
