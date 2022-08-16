@@ -17,6 +17,7 @@ app.get("/", async (req, res) => {
 	res.sendFile(path.join(__dirname, "index.html"));
 });
 
+
 // 更新计数
 app.post("/api/count", async (req, res) => {
 	const { action } = req.body;
@@ -40,7 +41,6 @@ app.get("/api/count", async (req, res) => {
 		code: 0,
 		p:path.join(__dirname, "index.html"),
 		data: result,
-		
 	});
 });
 

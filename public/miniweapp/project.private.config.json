@@ -1,324 +1,318 @@
 {
-    "setting": {},
-    "condition": {
-        "plugin": {
-            "list": []
+  "setting": {
+    "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
         },
-        "game": {
-            "list": []
+        {
+          "name": "pages/boast/boast",
+          "pathName": "pages/boast/boast",
+          "query": "",
+          "scene": null
         },
-        "gamePlugin": {
-            "list": []
+        {
+          "name": "pages/emotional/emotional",
+          "pathName": "pages/emotional/emotional",
+          "query": "",
+          "scene": null
         },
-        "miniprogram": {
-            "list": [
-                {
-                    "id": -1,
-                    "name": "db guide",
-                    "pathName": "pages/databaseGuide/databaseGuide",
-                    "query": ""
-                },
-                {
-                    "name": "pages/boast/boast",
-                    "pathName": "pages/boast/boast",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/emotional/emotional",
-                    "pathName": "pages/emotional/emotional",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/my/my",
-                    "pathName": "pages/my/my",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/demo/demo",
-                    "pathName": "pages/demo/demo",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/ranking/ranking",
-                    "pathName": "pages/ranking/ranking",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/verse/verse",
-                    "pathName": "pages/verse/verse",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/magicgirl/magicgirl",
-                    "pathName": "pages/magicgirl/magicgirl",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/manager/manager",
-                    "pathName": "pages/manager/manager",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/txv-video/txv-video",
-                    "pathName": "pages/txv-video/txv-video",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/active/active",
-                    "pathName": "pages/active/active",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/txv-video/txv-video",
-                    "pathName": "pages/txv-video/txv-video",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/orc/orc",
-                    "pathName": "pages/orc/orc",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/gather/gather",
-                    "pathName": "pages/gather/gather",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/test/test",
-                    "pathName": "pages/test/test",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/orc/orc",
-                    "pathName": "pages/orc/orc",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/dog/dog",
-                    "pathName": "pages/dog/dog",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/test/test",
-                    "pathName": "pages/test/test",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/setting/setting",
-                    "pathName": "pages/setting/setting",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "sports/index/index",
-                    "pathName": "sports/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/run/run",
-                    "pathName": "pages/run/run",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "sports/log/log",
-                    "pathName": "sports/log/log",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "sports/haibao/haibao",
-                    "pathName": "sports/haibao/haibao",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "sports/running/running",
-                    "pathName": "sports/running/running",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/setting/setting",
-                    "pathName": "pages/setting/setting",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "forum/index/index",
-                    "pathName": "forum/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "forum/create/create",
-                    "pathName": "forum/create/create",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "forum/detail/detail",
-                    "pathName": "forum/detail/detail",
-                    "query": "_id=79550af260a4b535180070973af7aef5",
-                    "scene": null
-                },
-                {
-                    "name": "college/index/index",
-                    "pathName": "college/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "college/updata/updata",
-                    "pathName": "college/updata/updata",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "forum/create/create",
-                    "pathName": "forum/create/create",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "college/chart/chart",
-                    "pathName": "college/chart/chart",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/run/run",
-                    "pathName": "pages/run/run",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "garbage/index/index",
-                    "pathName": "garbage/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/garbage/garbage",
-                    "pathName": "pages/garbage/garbage",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "tianapi/pyqwenan/pyqwenan",
-                    "pathName": "tianapi/pyqwenan/pyqwenan",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "caipiao/index/index",
-                    "pathName": "caipiao/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "caipiao/history/history",
-                    "pathName": "caipiao/history/history",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "caipiao/history/history",
-                    "pathName": "caipiao/history/history",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "promotion/index/index",
-                    "pathName": "promotion/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "pages/userlist/userlist",
-                    "pathName": "pages/userlist/userlist",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "challenge/index/index",
-                    "pathName": "challenge/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "challenge/up/up",
-                    "pathName": "challenge/up/up",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "challenge/qa/qa",
-                    "pathName": "challenge/qa/qa",
-                    "query": "code=20210001",
-                    "scene": null
-                },
-                {
-                    "name": "challenge/ranking/ranking",
-                    "pathName": "challenge/ranking/ranking",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "member/userinfo/userinfo",
-                    "pathName": "member/userinfo/userinfo",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "forum/index/index",
-                    "pathName": "forum/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "forum/detail/detail",
-                    "pathName": "forum/detail/detail",
-                    "query": "_id=8937eaa96125f1cb0637fbb67cffe9f5",
-                    "scene": null
-                },
-                {
-                    "name": "yugong/index/index",
-                    "pathName": "yugong/index/index",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "yugong/achievement/achievement",
-                    "pathName": "yugong/achievement/achievement",
-                    "query": "",
-                    "scene": null
-                },
-                {
-                    "name": "cartoon/index/index",
-                    "pathName": "cartoon/index/index",
-                    "query": "",
-                    "scene": null
-                }
-            ]
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/demo/demo",
+          "pathName": "pages/demo/demo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/ranking/ranking",
+          "pathName": "pages/ranking/ranking",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/verse/verse",
+          "pathName": "pages/verse/verse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/magicgirl/magicgirl",
+          "pathName": "pages/magicgirl/magicgirl",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/manager/manager",
+          "pathName": "pages/manager/manager",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/txv-video/txv-video",
+          "pathName": "pages/txv-video/txv-video",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/active/active",
+          "pathName": "pages/active/active",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/txv-video/txv-video",
+          "pathName": "pages/txv-video/txv-video",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/orc/orc",
+          "pathName": "pages/orc/orc",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/gather/gather",
+          "pathName": "pages/gather/gather",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/orc/orc",
+          "pathName": "pages/orc/orc",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/dog/dog",
+          "pathName": "pages/dog/dog",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/setting/setting",
+          "pathName": "pages/setting/setting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "sports/index/index",
+          "pathName": "sports/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/run/run",
+          "pathName": "pages/run/run",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "sports/log/log",
+          "pathName": "sports/log/log",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "sports/haibao/haibao",
+          "pathName": "sports/haibao/haibao",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "sports/running/running",
+          "pathName": "sports/running/running",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/setting/setting",
+          "pathName": "pages/setting/setting",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "forum/index/index",
+          "pathName": "forum/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "forum/create/create",
+          "pathName": "forum/create/create",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "forum/detail/detail",
+          "pathName": "forum/detail/detail",
+          "query": "_id=79550af260a4b535180070973af7aef5",
+          "scene": null
+        },
+        {
+          "name": "college/index/index",
+          "pathName": "college/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "college/updata/updata",
+          "pathName": "college/updata/updata",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "forum/create/create",
+          "pathName": "forum/create/create",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "college/chart/chart",
+          "pathName": "college/chart/chart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/run/run",
+          "pathName": "pages/run/run",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "garbage/index/index",
+          "pathName": "garbage/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/garbage/garbage",
+          "pathName": "pages/garbage/garbage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "tianapi/pyqwenan/pyqwenan",
+          "pathName": "tianapi/pyqwenan/pyqwenan",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "caipiao/index/index",
+          "pathName": "caipiao/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "caipiao/history/history",
+          "pathName": "caipiao/history/history",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "caipiao/history/history",
+          "pathName": "caipiao/history/history",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "promotion/index/index",
+          "pathName": "promotion/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/userlist/userlist",
+          "pathName": "pages/userlist/userlist",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "challenge/index/index",
+          "pathName": "challenge/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "challenge/up/up",
+          "pathName": "challenge/up/up",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "challenge/qa/qa",
+          "pathName": "challenge/qa/qa",
+          "query": "code=20210001",
+          "scene": null
+        },
+        {
+          "name": "challenge/ranking/ranking",
+          "pathName": "challenge/ranking/ranking",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "member/userinfo/userinfo",
+          "pathName": "member/userinfo/userinfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "forum/index/index",
+          "pathName": "forum/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "forum/detail/detail",
+          "pathName": "forum/detail/detail",
+          "query": "_id=8937eaa96125f1cb0637fbb67cffe9f5",
+          "scene": null
+        },
+        {
+          "name": "yugong/index/index",
+          "pathName": "yugong/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "yugong/achievement/achievement",
+          "pathName": "yugong/achievement/achievement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "cartoon/index/index",
+          "pathName": "cartoon/index/index",
+          "query": "",
+          "scene": null
         }
+      ]
     }
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "AR"
 }

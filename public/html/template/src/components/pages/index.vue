@@ -28,7 +28,9 @@
         methods: {
         },
         async mounted() {
-            Api.count()
+            Api.count().then(res=>{
+                
+            })
         }
     }
 </script>
