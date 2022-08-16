@@ -1,6 +1,6 @@
 <template>
     <div id="index">
-        
+        路由首页
     </div>
 </template>
 <script>
@@ -26,10 +26,9 @@
             }
         },
         methods: {
-
         },
         async mounted() {
-
+            Api.count()
         }
     }
 </script>

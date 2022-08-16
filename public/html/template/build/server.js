@@ -55,28 +55,7 @@ watcher.on('change', function(path) {
 app.use(webpackDevMiddlewareInstance);
 app.use(WebpackHotMiddlewareInstance);
 app.use(express.static(path.join(__dirname, '../')));
-// app.use('/miniapp/static/partner/', createProxyMiddleware({ target: 'https://ling.intonecc.com/', changeOrigin: true }));
-// app.use('/pages/api/banner/', createProxyMiddleware({ target: 'https://ling.intonecc.com/', changeOrigin: true }));
-// app.use('/ling/api/partner/', createProxyMiddleware({ target: 'https://ling.intonecc.com/', changeOrigin: true }));
 // app.use('/', createProxyMiddleware({ target: 'https://ling-test1.intonecc.com/', changeOrigin: true }));
-if(process.env.NODE_TEST=='production'){
-app.use('/', createProxyMiddleware({ target: 'https://ling.eintone.com/', changeOrigin: true }));
-}else if(process.env.NODE_TEST=='test1'){
-app.use('/', createProxyMiddleware({ target: 'https://ling-test1.intonecc.com/', changeOrigin: true }));
-}else if(process.env.NODE_TEST=='test2'){
-app.use('/', createProxyMiddleware({ target: 'https://ling.intonecc.com/', changeOrigin: true }));
-}else if(process.env.NODE_TEST=='local'){
-app.use('/', createProxyMiddleware({ target: 'https://ling-local.intonecc.com/', changeOrigin: true }));
-}else if(process.env.NODE_TEST=='dev'){
-app.use('/', createProxyMiddleware({ target: 'https://ling-dev.intonecc.com/', changeOrigin: true }));
-}else if(process.env.NODE_TEST=='dev2'){
-app.use('/', createProxyMiddleware({ target: 'https://ling-dev2.intonecc.com/', changeOrigin: true }));
-}else{
-app.use('/', createProxyMiddleware({ target: 'https://ling.intonecc.com/', changeOrigin: true }));
-}
-app.use('/', createProxyMiddleware({ target: 'https://openapi-test.00bang.cn/', changeOrigin: true }));
-app.use('/', createProxyMiddleware({ target: 'https://apis.map.qq.com/', changeOrigin: true }));
-
 
 webpackDevMiddlewareInstance.waitUntilValid(() => {
   console.log('Package is in a valid state');

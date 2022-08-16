@@ -26,7 +26,7 @@ if( appid ){
  * 全局配置
  */
 export const config = {
-    serverPath: _origin.indexOf('localhost')!=-1?'':window["serverPath"], 
+    serverPath: _origin.indexOf('localhost')!=-1?'https://express-fl55-1632003-1301447037.ap-shanghai.run.tcloudbase.com/':window["serverPath"], 
     // serverPath: window["serverPath"]||'https://ling.intonecc.com/', 
     ossPath: "https://ling-files.eintone.com/",
     mapTxKey: 'LKZBZ-DVTC3-5IV3F-YUGU7-VV6UE-ANFZC',

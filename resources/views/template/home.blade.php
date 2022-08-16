@@ -26,9 +26,9 @@
             }
         })();
     </script>
-<link href=dist/css/common.css?906ae631c248733cffe4 rel=stylesheet><link href=dist/css/index.css?906ae631c248733cffe4 rel=stylesheet></head>
+<link href=dist/css/common.css?85bc4706074ff0568e5a rel=stylesheet><link href=dist/css/home.css?85bc4706074ff0568e5a rel=stylesheet></head>
 <body>
     <div id=app></div>
     <script type=text/javascript src=//res.wx.qq.com/open/js/jweixin-1.6.0.js></script>
-<script type=text/javascript src=dist/js/common.js?906ae631c248733cffe4></script><script type=text/javascript src=dist/js/index.js?906ae631c248733cffe4></script></body>
+<script type=text/javascript src=dist/js/common.js?85bc4706074ff0568e5a></script><script type=text/javascript src=dist/js/home.js?85bc4706074ff0568e5a></script></body>
 </html>

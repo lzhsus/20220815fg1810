@@ -15,91 +15,6 @@ export const isWeiXin = function() {
     }
 }
 
-
-// 活动状态
-export const getActivityState = function(userInfo) {
-    return new Promise((resolve, reject) => {
-        if (userInfo.activityState == 2) {
-            vueApp.Dialog({ message: '活动已结束' });
-            // 活动已结束
-            resolve(false);
-        } else if (userInfo.activityState == 1) {
-            // 活动已开始
-            resolve(true);
-        } else {
-            vueApp.Dialog({ message: '活动未开始' });
-            // 活动未开始
-            resolve(false);
-        }
-    });
-}
-
-// 用户信息
-export const getmonopoly202112 = function(isLoading=false) {
-    return new Promise((resolve, reject) => {
-        Api.monopoly202112({},{isLoading:isLoading}).then(res => {
-            let timestamp = res.timestamp;
-            res = res.result || {};
-            res.timestamp = timestamp * 1000;
-            res.isStart = false;
-            res.countdown = 0;
-            AppData.currIndex = res.pos || 0
-            let userInfo = res.userInfo || {};
-            userInfo.headimgurl = getHeadimgurl(userInfo.headimgurl);
-            resolve(res);
-        });
-    });
-}
-
-//冬奥用户信息
-export const getSkiingMonopoly220128 = function() {
-    return new Promise((resolve, reject) => {
-        Api.skiingMonopoly220128().then(res => {
-            let timestamp = res.timestamp;
-            res = res.result || {};
-            res.timestamp = timestamp * 1000;
-            res.isStart = false;
-            res.countdown = 0;
-            AppData.currIndex = res.pos || 0
-            let userInfo = res.userInfo || {};
-            userInfo.headimgurl = getHeadimgurl(userInfo.headimgurl);
-            resolve(res);
-        });
-    });
-}
-
-// 用户信息
-export const getDistributorActivityInfo = function() {
-    return new Promise((resolve, reject) => {
-        Api.activityInfo().then(res => {
-            if (res.success) {
-                let timestamp = res.timestamp;
-                res.result.resultSuccess = res.success;
-                res.result.resultMsg = res.msg;
-                res = res.result || {};
-                res.timestamp = timestamp * 1000;
-                res.activityState = 0; //活动未开始
-                let startAt = moment(res.activityInfo.start_at).valueOf();
-                let endAt = moment(res.activityInfo.end_at).valueOf();
-                if (res.timestamp >= startAt && res.timestamp <= endAt) {
-                    console.log('活动开始');
-                    // 活动开始
-                    res.activityState = 1;
-                } else if (res.timestamp > endAt) {
-                    // 活动结束
-                    console.log('活动结束');
-                    res.activityState = 2;
-                } else {
-                    console.log('活动未开始');
-                }
-                let userInfo = res.userInfo || {};
-                userInfo.headimgurl = getHeadimgurl(userInfo.headimgurl);
-                console.log('userInfo', res);
-            }
-            resolve(res);
-        });
-    });
-}
 //字符串截取
 export const getByteVal = function(val, max) {
     var returnValue = '';
@@ -129,53 +44,6 @@ export const gblen = function(str) {
     }
     return len;
 }
-// llb 分享
-export const goShareToMini = function(shareDescribe, shareImg, shareUrl, shareTitle, shareType, activityId, miniProgramPath, miniProgramUserName) {
-    try {
-        window.jsObj.goShareToMini(shareDescribe, shareImg, shareUrl, shareTitle, shareType, activityId, miniProgramPath, miniProgramUserName);
-    } catch (error) {
-        try {
-            window.webkit.messageHandlers["goShareToMini"].postMessage([shareDescribe, shareImg, shareUrl, shareTitle, shareType, activityId, miniProgramPath, miniProgramUserName]);
-        } catch (error) {
-            toast("暂不支持", 3);
-        }
-    }
-}
-
-// 判断是否是红吧奖励
-export const isMoneyHongHao = function(code) {
-    let hongbaoCode = [
-        'dfwcj_210923_hongbao8',
-        'dfwcj_210923_hongbao6',
-        'dfwcj_210923_hongbao1',
-        'dfwcj_210923_hongbao05',
-        'dfwcj_210923_hongbao03'
-    ]
-    return hongbaoCode.indexOf(code) != -1 ? true : false
-}
-// 金额
-export const isMoneyHongHaoMoney = function(code) {
-    let money = 0;
-    switch (code) {
-        case 'dfwcj_210923_hongbao03':
-            money = 0.3
-            break;
-        case 'dfwcj_210923_hongbao05':
-            money = 0.5
-            break;
-        case 'dfwcj_210923_hongbao1':
-            money = 1.00
-            break;
-        case 'dfwcj_210923_hongbao6':
-            money = 6.66
-            break;
-        case 'dfwcj_210923_hongbao8':
-            money = 8.18
-            break;
-    }
-    return money;
-}
-
 
 export const group = function(array, subGroupLength) {
     let index = 0;
@@ -251,51 +119,6 @@ export const getCurrentPosition = function() {
 export const getUrlPath = function(url, type) {
     if (!url) return '';
     return url.indexOf('http') != -1 ? url : (vueApp.config.ossPath + (url.indexOf('?') != -1 ? url + '&' : url + '?') + 'v=20210414' + (type == 'video' ? '' : '&x-oss-process=style/miniapp'));
-}
-
-// 百度统计
-export const weixinEvent = function(name, data) {
-
-}
-// 跳转到小程序
-// userName：小程序原始ID
-// path：页面路径 后面?拼接参数 
-export const openWXMiniProgram = function(userName, path) {
-    console.log("app-to-weapp", userName, path)
-    try {
-        window.jsObj.openWXMiniProgram(userName, path);
-    } catch (error) {
-        try {
-            window.webkit.messageHandlers["openWXMiniProgram"].postMessage([userName, path]);
-        } catch (error) {
-            return -1;
-        }
-    }
-}
-// 关闭当前llb webview
-export const llbClosePage = function() {
-    try {
-        window.jsObj.closePage();
-    } catch (error) {
-        try {
-            window.webkit.messageHandlers["closePage"].postMessage(null);
-        } catch (error) {
-            history.go(-1)
-        }
-    }
-}
-
-export const goCarTypeDetail = function(carTypeId, shopId = -1, groupActivityId) {
-    console.log(carTypeId, shopId = -1, groupActivityId);
-    try {
-        window.jsObj.goCarTypeDetail(carTypeId, shopId, groupActivityId || 0)
-    } catch (error) {
-        try {
-            window.webkit.messageHandlers["goCarTypeDetail"].postMessage([carTypeId, shopId, groupActivityId || 0]);
-        } catch (error) {
-            location.href = urlPath + "html/mall/carStylePage.html?carTypeId=" + carTypeId + "&shopId=" + shopId
-        }
-    }
 }
 
 function getCurrentPositionInfo(coords, resolve) {
@@ -495,36 +318,6 @@ export const openLink = function(link, isReplace) {
         window.location.href = link;
     }
 }
-// 方法名：goCommonWeb
-// 说明：跳到通用web页
-// 参数 网页链接：url   string类型
-// 参数 网页类型：type  int类型（0：不带顶部导航栏，1：带有顶部导航栏）
-export const goCommomWeb = function(url, type) {
-    try {
-        window.jsObj.goCommonWeb(url, type);
-    } catch (error) {
-        try {
-            window.webkit.messageHandlers["goCommonWeb"].postMessage([url, type]);
-        } catch (error) {
-            location.href = url;
-        }
-    }
-}
-// 初始话分享
-export const isWeiXinShareInit = async function(data = {}) {
-    let isWeapp = await isWeiXinWeapp();
-    if (!isWeapp) return;
-    console.log("data", data)
-    const shareObj = {
-        shuttleTimeShareTitle: data.title || "",
-        shuttleTimeShareImg: data.path || "",
-        shuttleTimeSharePath: data.img || ""
-    }
-    wx.miniProgram.postMessage({
-        data: shareObj
-    })
-}
-
 // 是否小程序访问
 export const isWeiXinWeapp = function() {
     return new Promise((resolve, reject) => {
@@ -544,67 +337,9 @@ export const isWeiXinWeapp = function() {
         }
     });
 }
-
-// 检查llb是否已经登录回调
-export const isLlbLoginCallback = function() {
-    return new Promise((resolve, reject) => {
-        getLlbLogin(resolve);
-    });
-}
-
-function getLlbLogin(resolve) {
-    if (window.llbLogin != 1) {
-        setTimeout(() => {
-            getLlbLogin(resolve);
-        }, 300);
-    } else {
-        resolve(false);
-    }
-}
-
-// llb分享图片  url-图片链接（https）  type-分享类型：1 直接分享到微信对话 2 直接分享到微信朋友圈 3 分享到对话或朋友圈 弹出选择
-export const shareImage = function(url, type) {
-    try {
-        window.jsObj.shareImage(url, type);
-    } catch (error) {
-        try {
-            window.webkit.messageHandlers["shareImage"].postMessage([url, type]);
-        } catch (error) {
-            toast("目前版本还不支持，请更新至最新版本", 3);
-        }
-    }
-}
-
-// llb登录弹框
-export const showNoLogin = function() {
-    try {
-        window.jsObj.showNoLogin();
-    } catch (error) {
-        try {
-            window.webkit.messageHandlers["showNoLogin"].postMessage(null);
-        } catch (error) {
-
-        }
-    }
-}
-
 // 手机号码判断
 export const isMobile = function(tel) {
     return /^1\d{10}$/.test(tel);
-}
-
-// 神策统计
-export const sensorsTrack = async function(data, cb) {
-    console.log('event_code',data.event_code)
-    if(data.event_code=='button_event'){
-        window.sensors.track("button_event", data, ()=>{
-            cb&&cb();
-        });
-    }else{
-        window.sensors.quick("autoTrack",data, ()=>{
-            cb&&cb();
-        });
-    }
 }
 
 // 头像

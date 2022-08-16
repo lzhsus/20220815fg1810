@@ -1,0 +1,5 @@
+node_modules
+dist
+weapp
+weapp_production
+.DS_Store
