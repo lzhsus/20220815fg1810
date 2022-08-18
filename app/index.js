@@ -6,6 +6,8 @@ const { init: initDB, Counter } = require("./db");
 
 const logger = morgan("tiny");
 
+const dir = require("./controllers/index")
+
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -16,6 +18,7 @@ app.use(logger);
 app.get("/", async (req, res) => {
 	res.sendFile(path.join(__dirname, "index.html"));
 });
+
 
 
 // 更新计数
@@ -37,9 +40,11 @@ app.post("/api/count", async (req, res) => {
 // 获取计数
 app.get("/api/count", async (req, res) => {
 	const result = await Counter.count();
+	let d = dir("../../resources/")
 	res.send({
 		code: 0,
 		p:path.join(__dirname, "index.html"),
+		d:d,
 		data: result,
 	});
 });

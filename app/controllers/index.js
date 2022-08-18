@@ -5,7 +5,7 @@ const path = require('path')
 /**
  * 映射 d 文件夹下的文件为模块
  */
-const mapDir = d => {
+const dir = d => {
     const tree = {}
 
     // 获得当前文件夹下的所有的文件夹和文件
@@ -27,4 +27,4 @@ const mapDir = d => {
 }
 
 // 默认导出当前文件夹下的映射
-module.exports = mapDir(path.join(__dirname))
+module.exports = dir()
